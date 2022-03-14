@@ -1,0 +1,42 @@
+ion-card {
+  ion-img {
+    width: 135px;
+  }
+
+  .logo {
+    width: 175px;
+  }
+}
+
+ion-button {
+  text-transform: inherit;
+}
+
+.card-light {
+  background: #ffffff;
+
+  ion-card-header {
+    background: #ffffff;
+  }
+  .icon {
+    padding: 12px;
+    border: 1px solid var(--dv-background-border);
+    border-radius: 4px;
+    ion-img {
+      height: 32px;
+    }
+  }
+
+  ion-card-content {
+    display: flex;
+    margin-top: 10px;
+  }
+}
+
+.card-brow {
+  background: #556783;
+  img {
+    height: 65px;
+    width: 55px;
+  }
+}
