@@ -17,11 +17,22 @@
           </ion-avatar>
           <!-- Text -->
           <ion-label>
-            <h2
-              class="text-size-md text-color-primary font-regular ion-text-wrap"
-            >
-              {{ item.title }}
-            </h2>
+            <ion-item>
+              <h2
+                class="text-size-md text-color-primary font-regular"
+                (click)="openPage('review-detail/' + item.id)"
+              >
+                {{ item.title }}
+              </h2>
+              <h3
+                (click)="openPage('review-write/' + item.id)"
+                class="text-size-sm"
+                slot="end"
+              >
+                리뷰 쓰러가기
+              </h3>
+            </ion-item>
+
             <h2
               class="text-size-sm text-color-primary font-regular ion-text-wrap"
             >

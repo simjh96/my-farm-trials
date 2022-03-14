@@ -14,7 +14,24 @@ const routes: Routes = [
   },
   {
     path: 'review-search',
-    loadChildren: () => import('./pages/review-search/review-search.module').then( m => m.ReviewSearchPageModule)
+    loadChildren: () =>
+      import('./pages/review-search/review-search.module').then(
+        (m) => m.ReviewSearchPageModule
+      ),
+  },
+  {
+    path: 'review-detail/:itemId',
+    loadChildren: () =>
+      import('./pages/review-detail/review-detail.module').then(
+        (m) => m.ReviewDetailPageModule
+      ),
+  },
+  {
+    path: 'review-write/:itemId',
+    loadChildren: () =>
+      import('./pages/review-write/review-write.module').then(
+        (m) => m.ReviewWritePageModule
+      ),
   },
 ];
 
