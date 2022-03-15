@@ -26,7 +26,7 @@ export class AppComponent {
         singlePage: false,
       },
       {
-        url: 'review-write/0',
+        url: 'review-write/1',
         title: '리뷰 작성 진행중...',
         theme: 'textarea',
         icon: 'chevron-forward-circle',
@@ -35,7 +35,7 @@ export class AppComponent {
         singlePage: false,
       },
       {
-        url: 'review-detail/0',
+        url: 'review-detail/1',
         title: '리뷰 상세 구상중...',
         theme: 'item-detail',
         icon: 'chevron-forward-circle',
