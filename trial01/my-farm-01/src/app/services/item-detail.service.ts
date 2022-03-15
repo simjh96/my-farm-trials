@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ItemDetail } from '../interface/item-detail';
+import * as $ from 'jquery';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ItemDetailService {
   public itemDetail;
+
   constructor() {
     this.itemDetail = {
       itemAvatars: [
@@ -82,10 +84,71 @@ export class ItemDetailService {
           image: 'assets/images/contents/vegi/vegi12.jpg',
         },
       ],
+      itemDetails: [
+        {
+          id: 1,
+          title: '상품명',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at est purus.',
+          image: 'assets/images/contents/vegi/vegi01.jpg',
+          avatar: 'assets/images/contents/farm/farm01.jpg',
+          avatarTitle: '김농부씨',
+          avatarSubTitle: '농장배지 100개 보유중',
+          btFollowing: '구독중',
+        },
+        {
+          id: 2,
+          title: '상품명',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at est purus.',
+          image: 'assets/images/contents/vegi/vegi02.jpg',
+          avatar: 'assets/images/contents/farm/farm02.jpg',
+          avatarTitle: '김농부씨',
+          avatarSubTitle: '농장배지 100개 보유중',
+          btFollowing: '구독중',
+        },
+        {
+          id: 3,
+          title: '상품명',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at est purus.',
+          image: 'assets/images/contents/vegi/vegi03.jpg',
+          avatar: 'assets/images/contents/farm/farm03.jpg',
+          avatarTitle: '김농부씨',
+          avatarSubTitle: '농장배지 100개 보유중',
+          btFollowing: '구독중',
+        },
+        {
+          id: 4,
+          title: '상품명',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at est purus.',
+          image: 'assets/images/contents/vegi/vegi04.jpg',
+          avatar: 'assets/images/contents/farm/farm04.jpg',
+          avatarTitle: '김농부씨',
+          avatarSubTitle: '농장배지 100개 보유중',
+          btFollowing: '구독중',
+        },
+        {
+          id: 5,
+          title: '상품명',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at est purus.',
+          image: 'assets/images/contents/vegi/vegi05.jpg',
+          avatar: 'assets/images/contents/farm/farm05.jpg',
+          avatarTitle: '김농부씨',
+          avatarSubTitle: '농장배지 100개 보유중',
+          btFollowing: '구독중',
+        },
+      ],
     };
   }
 
-  getItemDetail(itemId: number): ItemDetail {
-    return this.itemDetail[itemId];
+  getItemDetail(itemId: number) {
+    // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
+    const result = $(this.itemDetail.itemDetails).filter(function (_i, n) {
+      return +n.id === itemId;
+    });
+    return result[0];
   }
 }

@@ -7,7 +7,92 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  {{itemId}}
-  <!-- <app-search-bar-simple></app-search-bar-simple> -->
+<ion-content>
+  <div class="order-detail">
+    주문 상품 상세
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-no-padding" size="12" size-md="6" size-lg="4">
+          <ion-card class="no-box-shadow border color-basic">
+            <!--Card image-->
+            <ion-img [src]="ithItemDetail.image"></ion-img>
+            <!--Card content-->
+            <ion-card-content class="transparent">
+              <!--Card subtitle-->
+              <ion-card-title class="ion-padding-top">
+                <h1 class="text-size-lg text-color-primary">
+                  {{ithItemDetail.title}}
+                </h1>
+              </ion-card-title>
+              <!--Card description-->
+              <p class="text-size-xs text-color-secondary">
+                {{ithItemDetail.description}}
+              </p>
+            </ion-card-content>
+            <ion-item class="transparent" lines="none">
+              <ion-avatar slot="start">
+                <img [src]="ithItemDetail.avatar" />
+              </ion-avatar>
+              <ion-label>
+                <h2 class="text-size-sm ion-no-margin">
+                  {{ithItemDetail.avatarTitle}}
+                </h2>
+                <p class="text-size-p ion-no-margin">
+                  {{ithItemDetail.avatarSubTitle}}
+                </p>
+              </ion-label>
+              <ion-button
+                class="button-small color-primary no-box-shadow"
+                (click)="onFollowFunc(item, $event)"
+                slot="end"
+                shape="round"
+              >
+                {{ithItemDetail.btFollowing}}
+              </ion-button>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <div class="keyword-chip-select">키워드 모음집</div>
+  <div class="photo-upload">
+    <h3 *ngIf="images.length === 0" class="ion-padding ion-text-center">
+      사진을 등록하세요!
+    </h3>
+
+    <ion-item *ngFor="let file of images; let i = index">
+      <ion-thumbnail>
+        <ion-img [src]="file.data"></ion-img>
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">
+        {{ (file.path.length>16)? (file.path | slice:0:16)+'..':(file.path) }}
+      </ion-label>
+      <ion-button fill="clear" (click)="deleteImage(file)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </div>
+  <ion-item>
+    <ion-label>리뷰 내용</ion-label>
+    <ion-textarea
+      placeholder="키워드를 이용해 내용 작성 기능 구현 필요..."
+    ></ion-textarea>
+  </ion-item>
+  <ion-button class="submit">리뷰완료</ion-button>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-button
+      fill="clear"
+      expand="full"
+      color="light"
+      (click)="selectImage()"
+    >
+      <ion-icon slot="start" name="camera"></ion-icon>
+      Select Image
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
