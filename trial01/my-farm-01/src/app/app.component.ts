@@ -26,7 +26,7 @@ export class AppComponent {
         singlePage: false,
       },
       {
-        url: 'review-write',
+        url: 'review-write/0',
         title: '리뷰 작성 진행중...',
         theme: 'textarea',
         icon: 'chevron-forward-circle',
@@ -35,7 +35,7 @@ export class AppComponent {
         singlePage: false,
       },
       {
-        url: 'review-detail',
+        url: 'review-detail/0',
         title: '리뷰 상세 구상중...',
         theme: 'item-detail',
         icon: 'chevron-forward-circle',
@@ -45,7 +45,7 @@ export class AppComponent {
       },
     ];
   }
-  openPage() {
-    this.navController.navigateRoot(['review-search'], {});
+  openPage(url: string) {
+    this.navController.navigateRoot([url], {});
   }
 }

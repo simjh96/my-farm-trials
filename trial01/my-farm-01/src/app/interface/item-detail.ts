@@ -1,6 +1,6 @@
 export interface ItemDetail {
-  id: number;
-  title: string;
-  subtitle: string;
-  image: string;
+  // need sth more...
+  // for detail pages
+  // meta data such as likes and comments
+  a: any;
 }

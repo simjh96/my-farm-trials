@@ -8,6 +8,7 @@ import { ReviewSearchPageRoutingModule } from './review-search-routing.module';
 
 import { ReviewSearchPage } from './review-search.page';
 import { SearchBarSimpleComponent } from 'src/app/components/search-bar-simple/search-bar-simple.component';
+import { ItemListComponent } from 'src/app/components/item-list/item-list.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { SearchBarSimpleComponent } from 'src/app/components/search-bar-simple/s
     IonicModule,
     ReviewSearchPageRoutingModule,
   ],
-  declarations: [ReviewSearchPage, SearchBarSimpleComponent],
+  declarations: [ReviewSearchPage, SearchBarSimpleComponent, ItemListComponent],
 })
 export class ReviewSearchPageModule {}

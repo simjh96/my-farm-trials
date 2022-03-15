@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { ItemDetailService } from 'src/app/services/item-detail.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-bar-simple',
@@ -8,18 +6,7 @@ import { ItemDetailService } from 'src/app/services/item-detail.service';
   styleUrls: ['./search-bar-simple.component.scss'],
 })
 export class SearchBarSimpleComponent implements OnInit {
-  items: any;
-
-  constructor(
-    public navController: NavController,
-    public itmeDetailService: ItemDetailService
-  ) {
-    this.items = itmeDetailService.itemDetail;
-  }
+  constructor() {}
 
   ngOnInit() {}
-
-  openPage(url: string) {
-    this.navController.navigateForward(url, {});
-  }
 }

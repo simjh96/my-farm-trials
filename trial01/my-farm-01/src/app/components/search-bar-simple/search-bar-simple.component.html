@@ -1,3 +1,4 @@
+<!-- card width design slim -->
 <ion-grid>
   <ion-row>
     <!-- List -->
@@ -6,40 +7,6 @@
         <ion-list-header class="ion-no-padding">
           <ion-searchbar class="ion-no-padding"></ion-searchbar>
         </ion-list-header>
-
-        <ion-item
-          class="default-item border border-radius ion-margin-top"
-          *ngFor="let item of items.items"
-        >
-          <!-- Avatar-->
-          <ion-avatar slot="start">
-            <img [src]="item.image" />
-          </ion-avatar>
-          <!-- Text -->
-          <ion-label>
-            <ion-item>
-              <h2
-                class="text-size-md text-color-primary font-regular"
-                (click)="openPage('review-detail/' + item.id)"
-              >
-                {{ item.title }}
-              </h2>
-              <h3
-                (click)="openPage('review-write/' + item.id)"
-                class="text-size-sm"
-                slot="end"
-              >
-                리뷰 쓰러가기
-              </h3>
-            </ion-item>
-
-            <h2
-              class="text-size-sm text-color-primary font-regular ion-text-wrap"
-            >
-              {{ item.subtitle }}
-            </h2>
-          </ion-label>
-        </ion-item>
       </ion-list>
     </ion-col>
   </ion-row>
