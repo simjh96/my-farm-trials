@@ -88,8 +88,7 @@ export class ItemDetailService {
         {
           id: 1,
           title: '상품명',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at est purus.',
+          description: '해당 상품의 자세한 데이터를 알려주는 문구',
           image: 'assets/images/contents/vegi/vegi01.jpg',
           avatar: 'assets/images/contents/farm/farm01.jpg',
           avatarTitle: '김농부씨',
@@ -99,8 +98,7 @@ export class ItemDetailService {
         {
           id: 2,
           title: '상품명',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at est purus.',
+          description: '해당 상품의 자세한 데이터를 알려주는 문구',
           image: 'assets/images/contents/vegi/vegi02.jpg',
           avatar: 'assets/images/contents/farm/farm02.jpg',
           avatarTitle: '김농부씨',
@@ -110,8 +108,7 @@ export class ItemDetailService {
         {
           id: 3,
           title: '상품명',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at est purus.',
+          description: '해당 상품의 자세한 데이터를 알려주는 문구',
           image: 'assets/images/contents/vegi/vegi03.jpg',
           avatar: 'assets/images/contents/farm/farm03.jpg',
           avatarTitle: '김농부씨',
@@ -121,8 +118,7 @@ export class ItemDetailService {
         {
           id: 4,
           title: '상품명',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at est purus.',
+          description: '해당 상품의 자세한 데이터를 알려주는 문구',
           image: 'assets/images/contents/vegi/vegi04.jpg',
           avatar: 'assets/images/contents/farm/farm04.jpg',
           avatarTitle: '김농부씨',
@@ -132,8 +128,7 @@ export class ItemDetailService {
         {
           id: 5,
           title: '상품명',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at est purus.',
+          description: '해당 상품의 자세한 데이터를 알려주는 문구',
           image: 'assets/images/contents/vegi/vegi05.jpg',
           avatar: 'assets/images/contents/farm/farm05.jpg',
           avatarTitle: '김농부씨',

@@ -13,6 +13,7 @@ import {
 import { finalize } from 'rxjs/operators';
 import { ItemDetailService } from 'src/app/services/item-detail.service';
 import { ActivatedRoute } from '@angular/router';
+import { ReviewKeywordService } from 'src/app/services/review-keyword.service';
 
 const IMAGE_DIR = 'stored-images';
 
@@ -27,9 +28,12 @@ interface LocalFile {
   styleUrls: ['./review-write.page.scss'],
 })
 export class ReviewWritePage implements OnInit {
-  public ithItemDetail;
   public itemId: number;
+  public ithItemDetail;
+
+  public reviewKeywords;
   images: LocalFile[] = [];
+  keys: string[];
 
   constructor(
     private plt: Platform,
@@ -37,11 +41,16 @@ export class ReviewWritePage implements OnInit {
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController,
     private itemDetailService: ItemDetailService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private reviewKeywordService: ReviewKeywordService
   ) {
+    // set ithItemDetail
     this.itemId = +this.route.snapshot.paramMap.get('itemId');
     this.ithItemDetail = itemDetailService.getItemDetail(this.itemId);
-    console.log(this.ithItemDetail);
+
+    // set reviewKeyword
+    this.reviewKeywords = reviewKeywordService.getAllReviewKeywords();
+    this.keys = Object.keys(this.reviewKeywords);
   }
 
   async ngOnInit() {
@@ -161,9 +170,9 @@ export class ReviewWritePage implements OnInit {
       )
       .subscribe((res) => {
         if (res['success']) {
-          this.presentToast('File upload complete.');
+          this.presentToast('파일을 업로드 했습니다!');
         } else {
-          this.presentToast('File upload failed.');
+          this.presentToast('파일 업로드를 실패 했습니다!');
         }
       });
   }
@@ -173,7 +182,7 @@ export class ReviewWritePage implements OnInit {
       path: file.path,
     });
     this.loadFiles();
-    this.presentToast('File removed.');
+    this.presentToast('파일을 삭제했습니다!');
   }
   // https://ionicframework.com/docs/angular/your-first-app/3-saving-photos
   private async readAsBase64(photo: Photo) {

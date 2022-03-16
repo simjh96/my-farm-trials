@@ -9,18 +9,21 @@
 
 <ion-content>
   <div class="order-detail">
-    주문 상품 상세
-
+    <ion-grid>
+      <h1 class="text-size-lg">주문 상품 상세</h1>
+    </ion-grid>
     <ion-grid>
       <ion-row>
         <ion-col class="ion-no-padding" size="12" size-md="6" size-lg="4">
           <ion-card class="no-box-shadow border color-basic">
             <!--Card image-->
+
             <ion-img [src]="ithItemDetail.image"></ion-img>
+
             <!--Card content-->
             <ion-card-content class="transparent">
               <!--Card subtitle-->
-              <ion-card-title class="ion-padding-top">
+              <ion-card-title>
                 <h1 class="text-size-lg text-color-primary">
                   {{ithItemDetail.title}}
                 </h1>
@@ -56,43 +59,63 @@
       </ion-row>
     </ion-grid>
   </div>
-  <div class="keyword-chip-select">키워드 모음집</div>
-  <div class="photo-upload">
+
+  <div class="keyword-chip-select ion-margin-horizontal green">
+    <h3 class="text-size-xs font-regular text-color-secondary ion-no-margin">
+      키워드 모음집
+    </h3>
+
+    <ion-slides
+      [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }"
+      *ngFor="let key of keys"
+    >
+      <ion-slide
+        *ngFor="let values of reviewKeywords[key]"
+        [style]="'width: '+(values[0].length*12+55)+'px;'"
+      >
+        <ion-grid>
+          <ion-icon class="icon-color-accent" [name]="values[1]"></ion-icon>
+          <ion-label class="text-size-sm">{{values[0]}}</ion-label>
+          <ion-icon name="close-circle"></ion-icon>
+        </ion-grid>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <ion-grid class="text-write green">
+    <ion-textarea
+      class="border"
+      rows="6"
+      cols="20"
+      placeholder="키워드를 이용해 내용 작성 기능 구현 필요..."
+    ></ion-textarea>
+    <ion-button class="submit" color="success" expand="full"
+      >리뷰완료</ion-button
+    >
+  </ion-grid>
+
+  <div class="photo-upload ion-margin">
     <h3 *ngIf="images.length === 0" class="ion-padding ion-text-center">
       사진을 등록하세요!
     </h3>
+    <ion-grid>
+      <ion-thumbnail (click)="selectImage()">
+        <p class="tex-size-sm">사진 추가</p>
+        <ion-icon name="camera" class="green text-size-lg"></ion-icon>
+      </ion-thumbnail>
+    </ion-grid>
 
-    <ion-item *ngFor="let file of images; let i = index">
+    <ion-grid *ngFor="let file of images; let i = index">
       <ion-thumbnail>
         <ion-img [src]="file.data"></ion-img>
       </ion-thumbnail>
       <ion-label class="ion-text-wrap">
-        {{ (file.path.length>16)? (file.path | slice:0:16)+'..':(file.path) }}
+        {{ (file.path.length>10)? '...'+(file.path |
+        slice:-10:file.path.length):(file.path) }}
       </ion-label>
       <ion-button fill="clear" (click)="deleteImage(file)">
         <ion-icon slot="icon-only" name="trash"></ion-icon>
       </ion-button>
-    </ion-item>
+    </ion-grid>
   </div>
-  <ion-item>
-    <ion-label>리뷰 내용</ion-label>
-    <ion-textarea
-      placeholder="키워드를 이용해 내용 작성 기능 구현 필요..."
-    ></ion-textarea>
-  </ion-item>
-  <ion-button class="submit">리뷰완료</ion-button>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar color="primary">
-    <ion-button
-      fill="clear"
-      expand="full"
-      color="light"
-      (click)="selectImage()"
-    >
-      <ion-icon slot="start" name="camera"></ion-icon>
-      Select Image
-    </ion-button>
-  </ion-toolbar>
-</ion-footer>
