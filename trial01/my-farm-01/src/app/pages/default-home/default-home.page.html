@@ -1,0 +1,117 @@
+<ion-content>
+  <ion-grid class="marginer"> </ion-grid>
+  <!-- 인기농장 grid list -->
+  <ion-grid class="green grid-list">
+    <ion-row>
+      <ion-item class="title" lines="none">
+        <ion-label>인기 농장</ion-label>
+        <ion-item slot="end" lines="none">
+          <ion-label>더보기</ion-label>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </ion-item>
+      </ion-item>
+      <ion-col
+        size="6"
+        class="ion-no-padding"
+        size-lg="4"
+        *ngFor="let i of [0, 1, 2, 3, 4, 5]"
+      >
+        <ion-card
+          class="grid-card no-box-shadow ion-text-center border color-basic border-radius ion-no-margin"
+        >
+          <img [src]="items[i].image" />
+          <ion-grid lines="none" class="farmer-info">
+            <ion-avatar class="ion-text-sm">
+              <img [src]="items[i].image" />
+            </ion-avatar>
+            <ion-label class="ion-no-margin"
+              >농장주 구현 필요</ion-label
+            ></ion-grid
+          >
+          <h2 class="text-size-lg ion-no-margin text-color-primary">
+            {{items[i].title}}
+          </h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- 오늘의 재배일지 slider list -->
+  <ion-grid class="slider-list">
+    <ion-row>
+      <ion-item class="title" lines="none">
+        <ion-label>인기 농장</ion-label>
+        <ion-item slot="end" lines="none">
+          <ion-label>더보기</ion-label>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </ion-item>
+      </ion-item>
+
+      <ion-slides
+        [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }"
+        class="slider-list green"
+      >
+        <ion-slide *ngFor="let i of [0,1,2,3,4,5]">
+          <ion-card
+            class="no-box-shadow ion-text-center border color-basic border-radius ion-no-margin"
+          >
+            <img [src]="items[i].image" />
+            <ion-grid lines="none" class="farmer-info">
+              <ion-avatar class="ion-text-sm">
+                <img [src]="items[i].image" />
+              </ion-avatar>
+              <ion-label class="ion-no-margin"
+                >농장주 구현 필요</ion-label
+              ></ion-grid
+            >
+            <h2 class="text-size-lg ion-no-margin text-color-primary">
+              {{items[i].title}}
+            </h2>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+
+      <ion-col
+        size="6"
+        class="ion-no-padding"
+        size-lg="4"
+        *ngFor="let i of [0, 1, 2, 3, 4, 5]"
+      >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- 지도 -->
+  <ion-grid class="green grid-list">
+    <ion-row>
+      <ion-item class="title" lines="none">
+        <ion-label>인기 농장</ion-label>
+        <ion-item slot="end" lines="none">
+          <ion-label>더보기</ion-label>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </ion-item>
+      </ion-item>
+      <ion-col
+        size="6"
+        class="ion-no-padding"
+        size-lg="4"
+        *ngFor="let i of [0, 1, 2, 3, 4, 5]"
+      >
+        <ion-card
+          class="grid-card no-box-shadow ion-text-center border color-basic border-radius ion-no-margin"
+        >
+          <img [src]="items[i].image" />
+          <ion-grid lines="none" class="farmer-info">
+            <ion-avatar class="ion-text-sm">
+              <img [src]="items[i].image" />
+            </ion-avatar>
+            <ion-label class="ion-no-margin"
+              >농장주 구현 필요</ion-label
+            ></ion-grid
+          >
+          <h2 class="text-size-lg ion-no-margin text-color-primary">
+            {{items[i].title}}
+          </h2>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

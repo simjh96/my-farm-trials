@@ -1,4 +1,4 @@
-<ion-header class="green">
+<ion-header #header class="green">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
@@ -7,80 +7,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="order-detail">
-    <ion-grid>
-      <h1 class="text-size-lg">주문 상품 상세</h1>
-    </ion-grid>
-    <ion-grid>
-      <ion-row>
-        <ion-col class="ion-no-padding" size="12" size-md="6" size-lg="4">
-          <ion-card class="no-box-shadow border color-basic">
-            <!--Card image-->
-
-            <ion-img [src]="ithItemDetail.image"></ion-img>
-
-            <!--Card content-->
-            <ion-card-content class="transparent">
-              <!--Card subtitle-->
-              <ion-card-title>
-                <h1 class="text-size-lg text-color-primary">
-                  {{ithItemDetail.title}}
-                </h1>
-              </ion-card-title>
-              <!--Card description-->
-              <p class="text-size-xs text-color-secondary">
-                {{ithItemDetail.description}}
-              </p>
-            </ion-card-content>
-            <ion-item class="transparent" lines="none">
-              <ion-avatar slot="start">
-                <img [src]="ithItemDetail.avatar" />
-              </ion-avatar>
-              <ion-label>
-                <h2 class="text-size-sm ion-no-margin">
-                  {{ithItemDetail.avatarTitle}}
-                </h2>
-                <p class="text-size-p ion-no-margin">
-                  {{ithItemDetail.avatarSubTitle}}
-                </p>
-              </ion-label>
-              <ion-button
-                class="button-small color-primary no-box-shadow"
-                (click)="onFollowFunc(item, $event)"
-                slot="end"
-                shape="round"
-              >
-                {{ithItemDetail.btFollowing}}
-              </ion-button>
-            </ion-item>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-
-  <div class="keyword-chip-select ion-margin-horizontal green">
-    <h3 class="text-size-xs font-regular text-color-secondary ion-no-margin">
-      키워드 모음집
-    </h3>
-
-    <ion-slides
-      [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }"
-      *ngFor="let key of keys"
-    >
-      <ion-slide
-        *ngFor="let values of reviewKeywords[key]"
-        [style]="'width: '+(values[0].length*12+55)+'px;'"
-      >
-        <ion-grid>
-          <ion-icon class="icon-color-accent" [name]="values[1]"></ion-icon>
-          <ion-label class="text-size-sm">{{values[0]}}</ion-label>
-          <ion-icon name="close-circle"></ion-icon>
-        </ion-grid>
-      </ion-slide>
-    </ion-slides>
-  </div>
+<ion-content scrollEvents="true" [appHideHeader]="header" class="green">
+  <app-item-detail [ithItemDetail]="ithItemDetail"></app-item-detail>
+  <app-chip-sliders
+    [keys]="keys"
+    [reviewKeywords]="reviewKeywords"
+  ></app-chip-sliders>
 
   <ion-grid class="text-write green">
     <ion-textarea

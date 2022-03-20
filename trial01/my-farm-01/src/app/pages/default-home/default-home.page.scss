@@ -1,0 +1,61 @@
+.marginer {
+  display: block;
+  content: " ";
+  height: 10px;
+}
+
+.grid-list {
+  .title {
+    width: 100vw;
+    margin-bottom: 5px;
+  }
+  .grid-card {
+    margin: 3px !important;
+    .farmer-info {
+      display: flex;
+      height: 20px;
+      align-items: center;
+      justify-content: flex-start !important;
+      ion-avatar {
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.slider-list {
+  .title {
+    width: 100vw;
+  }
+  margin-top: 15px;
+
+  ion-slides {
+    margin-top: 0px;
+    padding-bottom: 20px;
+    ion-slide {
+      width: 170px;
+      height: 220px;
+      margin: 20px 5px 0 10px;
+      box-shadow: 5px 10px 10px #17b2397c;
+      border-radius: 5px;
+      .farmer-info {
+        display: flex;
+        height: 20px;
+        align-items: center;
+        justify-content: flex-start !important;
+        ion-avatar {
+          height: 20px;
+          width: 20px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}

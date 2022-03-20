@@ -9,6 +9,7 @@ import { ReviewSearchPageRoutingModule } from './review-search-routing.module';
 import { ReviewSearchPage } from './review-search.page';
 import { SearchBarSimpleComponent } from 'src/app/components/search-bar-simple/search-bar-simple.component';
 import { ItemListComponent } from 'src/app/components/item-list/item-list.component';
+import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ItemListComponent } from 'src/app/components/item-list/item-list.compon
     FormsModule,
     IonicModule,
     ReviewSearchPageRoutingModule,
+    SharedDirectivesModule,
   ],
   declarations: [ReviewSearchPage, SearchBarSimpleComponent, ItemListComponent],
 })

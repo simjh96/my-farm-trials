@@ -1,3 +1,51 @@
-<p>
-  item-detail works!
-</p>
+<div class="order-detail">
+  <ion-grid>
+    <h1 class="text-size-lg">주문 상품 상세</h1>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-no-padding" size="12" size-md="6" size-lg="4">
+        <ion-card class="no-box-shadow border color-basic">
+          <!--Card image-->
+
+          <ion-img [src]="ithItemDetail.image"></ion-img>
+
+          <!--Card content-->
+          <ion-card-content class="transparent">
+            <!--Card subtitle-->
+            <ion-card-title>
+              <h1 class="text-size-lg text-color-primary">
+                {{ ithItemDetail.title }}
+              </h1>
+            </ion-card-title>
+            <!--Card description-->
+            <p class="text-size-xs text-color-secondary">
+              {{ ithItemDetail.description }}
+            </p>
+          </ion-card-content>
+          <ion-item class="transparent" lines="none">
+            <ion-avatar slot="start">
+              <img [src]="ithItemDetail.avatar" />
+            </ion-avatar>
+            <ion-label>
+              <h2 class="text-size-sm ion-no-margin">
+                {{ ithItemDetail.avatarTitle }}
+              </h2>
+              <p class="text-size-p ion-no-margin">
+                {{ ithItemDetail.avatarSubTitle }}
+              </p>
+            </ion-label>
+            <ion-button
+              class="button-small color-primary no-box-shadow"
+              (click)="onFollowFunc(item, $event)"
+              slot="end"
+              shape="round"
+            >
+              {{ ithItemDetail.btFollowing }}
+            </ion-button>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

@@ -1,4 +1,4 @@
-<ion-header class="green">
+<ion-header #header class="green">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
@@ -7,7 +7,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content
+  [fullscreen]="true"
+  scrollEvents="true"
+  [appHideHeader]="header"
+  class="green"
+>
   <app-search-bar-simple></app-search-bar-simple>
   <app-item-list [cardWide]="cardWide"></app-item-list>
 </ion-content>

@@ -4,37 +4,6 @@ ion-card {
   }
 }
 
-.order-detail {
-  ion-grid:nth-child(1) {
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  ion-grid {
-    ion-img {
-      height: 150px;
-      object-fit: cover;
-    }
-  }
-}
-
-.keyword-chip-select {
-  ion-slide {
-    height: 25px;
-    border-radius: 15px;
-    margin: 2px;
-    color: rgba(61, 60, 60, 0.692);
-    border: 1px solid rgba(61, 60, 60, 0.692);
-    ion-grid {
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-}
-
 .text-write {
   ion-label {
     // margin: auto;
