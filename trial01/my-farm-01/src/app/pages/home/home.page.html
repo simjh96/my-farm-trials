@@ -6,22 +6,24 @@
     </ion-buttons>
     <ion-title>홈 메뉴</ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="top">
+        <ion-tab-button tab="default-home">
+          <ion-label class="text-size-xs font-medium">홈</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="tab8">
+          <ion-label class="text-size-xs font-medium">Products</ion-label>
+        </ion-tab-button>
+        <ion-tab-button tab="tab9">
+          <ion-label class="text-size-xs font-medium">Blog</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
 </ion-header>
 <!-- Content -->
-<ion-content class="green">
+<ion-content scrollEvents="true" [appHideHeader]="header" class="green">
   <!-- Tab -->
-
-  <ion-tabs scrollEvents="true" [appHideHeader]="header">
-    <ion-tab-bar slot="top">
-      <ion-tab-button tab="default-home">
-        <ion-label class="text-size-xs font-medium">홈</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="tab8">
-        <ion-label class="text-size-xs font-medium">Products</ion-label>
-      </ion-tab-button>
-      <ion-tab-button tab="tab9">
-        <ion-label class="text-size-xs font-medium">Blog</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
+  <ion-router-outlet></ion-router-outlet>
 </ion-content>
