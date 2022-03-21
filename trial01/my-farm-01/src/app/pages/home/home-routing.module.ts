@@ -8,13 +8,6 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
-    children: [
-      {
-        path: 'default-home',
-        children: [{ path: '', component: DefaultHomePage }],
-      },
-      { path: '', redirectTo: 'home' },
-    ],
   },
 ];
 
