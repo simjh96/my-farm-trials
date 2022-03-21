@@ -4,11 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { GoogleMapWebPageRoutingModule } from './google-map-web-routing.module';
 
-import { HomePage } from './home.page';
-import { DefaultHomePage } from '../default-home/default-home.page';
-import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
+import { GoogleMapWebPage } from './google-map-web.page';
 import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
@@ -16,13 +14,12 @@ import { AgmCoreModule } from '@agm/core';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
-    SharedDirectivesModule,
+    GoogleMapWebPageRoutingModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAvsbUCSE2t2YZa3hw9RF3Imrjj9KXb1iU',
       libraries: ['places'],
     }),
   ],
-  declarations: [HomePage, DefaultHomePage],
+  declarations: [GoogleMapWebPage],
 })
-export class HomePageModule {}
+export class GoogleMapWebPageModule {}

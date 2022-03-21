@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Subject } from 'rxjs';
 import { ItemAvatarDetail } from 'src/app/interface/item-avatar-detail';
 import { ItemDetailService } from 'src/app/services/item-detail.service';
 
@@ -8,7 +9,17 @@ import { ItemDetailService } from 'src/app/services/item-detail.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  constructor() {}
+  public initialTab = true;
+  public currentTab: Subject<string> = new Subject();
 
-  ngOnInit() {}
+  constructor() {}
+  ngOnInit() {
+    this.currentTab.next('default-home');
+  }
+
+  tabChange(newTab: string) {
+    console.log(newTab);
+    this.initialTab = false;
+    this.currentTab.next(newTab);
+  }
 }

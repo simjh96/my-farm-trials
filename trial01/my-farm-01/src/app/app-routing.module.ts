@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home/default-home',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {
@@ -32,7 +32,11 @@ const routes: Routes = [
       import('./pages/review-write/review-write.module').then(
         (m) => m.ReviewWritePageModule
       ),
+  },  {
+    path: 'google-map-web',
+    loadChildren: () => import('./pages/google-map-web/google-map-web.module').then( m => m.GoogleMapWebPageModule)
   },
+
 ];
 
 @NgModule({

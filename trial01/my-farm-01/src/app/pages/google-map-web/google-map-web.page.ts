@@ -1,24 +1,19 @@
-import { MapsAPILoader, AgmMap } from '@agm/core';
+// home.page.ts
 import {
   Component,
-  ElementRef,
-  EventEmitter,
-  HostListener,
-  NgZone,
   OnInit,
-  Output,
   ViewChild,
+  ElementRef,
+  NgZone,
 } from '@angular/core';
-import { ItemAvatarDetail } from 'src/app/interface/item-avatar-detail';
-import { ItemDetailService } from 'src/app/services/item-detail.service';
+import { MapsAPILoader, AgmMap } from '@agm/core';
 
 @Component({
-  selector: 'app-default-home',
-  templateUrl: './default-home.page.html',
-  styleUrls: ['./default-home.page.scss'],
+  selector: 'app-google-map-web',
+  templateUrl: 'google-map-web.page.html',
+  styleUrls: ['google-map-web.page.scss'],
 })
-export class DefaultHomePage implements OnInit {
-  public items: ItemAvatarDetail[];
+export class GoogleMapWebPage implements OnInit {
   title: string = 'AGM project';
   latitude: number;
   longitude: number;
@@ -29,13 +24,7 @@ export class DefaultHomePage implements OnInit {
   @ViewChild('search', { static: false })
   public searchElementRef: ElementRef;
 
-  constructor(
-    public itemDetailService: ItemDetailService,
-    private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
-  ) {
-    this.items = itemDetailService.itemDetail.itemAvatars;
-  }
+  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
 
   ngOnInit() {
     //load Places Autocomplete

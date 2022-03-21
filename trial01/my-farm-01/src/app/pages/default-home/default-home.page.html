@@ -1,4 +1,4 @@
-<ion-content scrollEvents="true">
+<ion-content [fullscreen]="true" scrollEvents="true">
   <ion-grid class="marginer"> </ion-grid>
   <!-- 인기농장 grid list -->
   <ion-grid class="green grid-list">
@@ -80,38 +80,29 @@
     </ion-row>
   </ion-grid>
   <!-- 지도 -->
-  <ion-grid class="green grid-list">
-    <ion-row>
-      <ion-item class="title" lines="none">
-        <ion-label>인기 농장</ion-label>
-        <ion-item slot="end" lines="none">
-          <ion-label>더보기</ion-label>
-          <ion-icon name="chevron-forward"></ion-icon>
-        </ion-item>
-      </ion-item>
-      <ion-col
-        size="6"
-        class="ion-no-padding"
-        size-lg="4"
-        *ngFor="let i of [0, 1, 2, 3, 4, 5]"
-      >
-        <ion-card
-          class="grid-card no-box-shadow ion-text-center border color-basic border-radius ion-no-margin"
-        >
-          <img [src]="items[i].image" />
-          <ion-grid lines="none" class="farmer-info">
-            <ion-avatar class="ion-text-sm">
-              <img [src]="items[i].image" />
-            </ion-avatar>
-            <ion-label class="ion-no-margin"
-              >농장주 구현 필요</ion-label
-            ></ion-grid
-          >
-          <h2 class="text-size-lg ion-no-margin text-color-primary">
-            {{items[i].title}}
-          </h2>
-        </ion-card>
-      </ion-col>
-    </ion-row>
+  <!-- https://www.freakyjolly.com/ionic-5-angular-google-maps-using-agm/ -->
+  <ion-grid class="agm">
+    <input
+      type="text"
+      class="native-input sc-ion-input-ios"
+      (keydown.enter)="$event.preventDefault()"
+      placeholder="Search Nearest Location"
+      autocorrect="off"
+      autocapitalize="off"
+      spellcheck="off"
+      type="text"
+      #search
+    />
+    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+      <agm-marker
+        [latitude]="latitude"
+        [longitude]="longitude"
+        [markerDraggable]="true"
+        (dragEnd)="markerDragEnd($event)"
+      ></agm-marker>
+    </agm-map>
+    <h5>Address: {{address}}</h5>
+    <div>Latitude: {{latitude}}</div>
+    <div>Longitude: {{longitude}}</div>
   </ion-grid>
 </ion-content>

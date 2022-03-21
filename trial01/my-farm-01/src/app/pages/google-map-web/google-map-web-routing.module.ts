@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DefaultHomePage } from './default-home.page';
+import { GoogleMapWebPage } from './google-map-web.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: DefaultHomePage,
-  },
+    component: GoogleMapWebPage
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DefaultHomePageRoutingModule {}
+export class GoogleMapWebPageRoutingModule {}

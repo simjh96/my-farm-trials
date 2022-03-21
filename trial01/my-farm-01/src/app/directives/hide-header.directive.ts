@@ -24,7 +24,6 @@ export class HideHeaderDirective implements OnInit {
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   @HostListener('ionScroll', ['$event']) onContentScroll($event) {
-    console.log($event);
     const scrollTop = $event.detail.scrollTop;
     let newPosition = -(scrollTop / 5);
 
