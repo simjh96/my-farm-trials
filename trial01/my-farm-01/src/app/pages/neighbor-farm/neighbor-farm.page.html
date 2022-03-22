@@ -1,9 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>neighbor-farm</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content
+  scrollEvents="true"
+  [fullscreen]="true"
+  class="title ion-margin-top"
+>
+  <app-select (onChange)="onChange($event)"></app-select>
+  <ion-grid class="item-list">
+    <app-item-detail
+      *ngFor="let idx of idxs"
+      [ithItemDetail]="itemDetailService.getItemDetail(idx)"
+      (onItemClick)="openPage('neighbor-farm-detail/' + $event.id)"
+      (onFollow)="onFollow($event)"
+    ></app-item-detail>
+  </ion-grid>
 
-<ion-content>
-
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="더 많은 농장~"
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <app-footer *ngIf="fin"></app-footer>
 </ion-content>

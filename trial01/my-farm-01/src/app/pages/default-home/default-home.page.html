@@ -14,22 +14,22 @@
         size="6"
         class="ion-no-padding"
         size-lg="4"
-        *ngFor="let i of [0, 1, 2, 3, 4, 5]"
+        *ngFor="let idx of [1,2,3,4,5,6]"
       >
         <ion-card
           class="grid-card no-box-shadow ion-text-center border color-basic border-radius ion-no-margin"
         >
-          <img [src]="items[i].image" />
+          <img [src]="itemDetailService.getItemDetail(idx).image" />
           <ion-grid lines="none" class="farmer-info">
             <ion-avatar class="ion-text-sm">
-              <img [src]="items[i].image" />
+              <img [src]="itemDetailService.getItemDetail(idx).badge" />
             </ion-avatar>
             <ion-label class="ion-no-margin"
               >농장주 구현 필요</ion-label
             ></ion-grid
           >
           <h2 class="text-size-lg ion-no-margin text-color-primary">
-            {{items[i].title}}
+            {{itemDetailService.getItemDetail(idx).title}}
           </h2>
         </ion-card>
       </ion-col>
@@ -50,21 +50,21 @@
         [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }"
         class="slider-list green"
       >
-        <ion-slide *ngFor="let i of [0,1,2,3,4,5]">
+        <ion-slide *ngFor="let idx of [1,2,3,4,5,6]">
           <ion-card
             class="no-box-shadow ion-text-center border color-basic border-radius ion-no-margin"
           >
-            <img [src]="items[i].image" />
+            <img [src]="itemDetailService.getItemDetail(idx).image" />
             <ion-grid lines="none" class="farmer-info">
-              <ion-avatar class="ion-text-sm">
-                <img [src]="items[i].image" />
+              <ion-avatar class="ion-text-sm ion-no-padding">
+                <img [src]="itemDetailService.getItemDetail(idx).badge" />
               </ion-avatar>
               <ion-label class="ion-no-margin"
                 >농장주 구현 필요</ion-label
               ></ion-grid
             >
             <h2 class="text-size-lg ion-no-margin text-color-primary">
-              {{items[i].title}}
+              {{itemDetailService.getItemDetail(idx).title}}
             </h2>
           </ion-card>
         </ion-slide>
@@ -104,4 +104,5 @@
       ></agm-marker>
     </agm-map>
   </ion-grid>
+  <app-footer></app-footer>
 </ion-content>

@@ -32,11 +32,26 @@ const routes: Routes = [
       import('./pages/review-write/review-write.module').then(
         (m) => m.ReviewWritePageModule
       ),
-  },  {
-    path: 'neighbor-farm',
-    loadChildren: () => import('./pages/neighbor-farm/neighbor-farm.module').then( m => m.NeighborFarmPageModule)
   },
-
+  {
+    path: 'neighbor-farm',
+    loadChildren: () =>
+      import('./pages/neighbor-farm/neighbor-farm.module').then(
+        (m) => m.NeighborFarmPageModule
+      ),
+  },
+  {
+    path: 'my-farm',
+    loadChildren: () =>
+      import('./pages/my-farm/my-farm.module').then((m) => m.MyFarmPageModule),
+  },
+  {
+    path: 'neighbor-farm-detail/:itemId',
+    loadChildren: () =>
+      import('./pages/neighbor-farm-detail/neighbor-farm-detail.module').then(
+        (m) => m.NeighborFarmDetailPageModule
+      ),
+  },
 ];
 
 @NgModule({

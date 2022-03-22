@@ -7,14 +7,22 @@ import { IonicModule } from '@ionic/angular';
 import { NeighborFarmPageRoutingModule } from './neighbor-farm-routing.module';
 
 import { NeighborFarmPage } from './neighbor-farm.page';
+import { ItemDetailComponent } from 'src/app/components/item-detail/item-detail.component';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
+import { SelectComponent } from 'src/app/components/select/select.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    NeighborFarmPageRoutingModule
+    NeighborFarmPageRoutingModule,
   ],
-  declarations: [NeighborFarmPage]
+  declarations: [
+    NeighborFarmPage,
+    ItemDetailComponent,
+    FooterComponent,
+    SelectComponent,
+  ],
 })
 export class NeighborFarmPageModule {}

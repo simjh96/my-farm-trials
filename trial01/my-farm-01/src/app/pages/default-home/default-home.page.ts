@@ -18,7 +18,6 @@ import { ItemDetailService } from 'src/app/services/item-detail.service';
   styleUrls: ['./default-home.page.scss'],
 })
 export class DefaultHomePage implements OnInit {
-  public items: ItemAvatarDetail[];
   title = 'AGM project';
   latitudes: number[];
   longitudes: number[];
@@ -30,7 +29,6 @@ export class DefaultHomePage implements OnInit {
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone
   ) {
-    this.items = itemDetailService.itemDetail.itemAvatars;
     //set latitude, longitude and zoom
     this.cnt = 3;
     this.latitudes = [

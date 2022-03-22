@@ -1,0 +1,20 @@
+<ion-list class="ion-no-padding ion-no-margin">
+  <ion-item
+    lines="none"
+    class="default-item border border-radius ion-margin-top"
+    *ngIf="data !== null"
+  >
+    <ion-select
+      slot="end"
+      class="text-size-xs"
+      [value]="data.selectedItem"
+      multiple="false"
+      interface="popover"
+      (ionChange)="onChangeFunc($event)"
+    >
+      <ion-select-option *ngFor="let item of data.items" [value]="item.id">
+        {{ item.title }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>

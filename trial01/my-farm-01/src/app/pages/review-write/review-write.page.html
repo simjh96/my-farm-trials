@@ -7,13 +7,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content scrollEvents="true" [appHideHeader]="header" class="green">
-  <app-item-detail [ithItemDetail]="ithItemDetail"></app-item-detail>
+<ion-content
+  [fullscreen]="true"
+  scrollEvents="true"
+  [appHideHeader]="header"
+  class="green"
+>
+  <ion-grid class="my-margin"> </ion-grid>
+  <!-- item-detail -->
+  <app-item-detail
+    scrollEvents="true"
+    [ithItemDetail]="ithItemDetail"
+  ></app-item-detail>
+
+  <ion-grid class="my-margin"> </ion-grid>
+  <!-- chip-sliders -->
   <app-chip-sliders
+    scrollEvents="true"
     [keys]="keys"
     [reviewKeywords]="reviewKeywords"
   ></app-chip-sliders>
 
+  <ion-grid class="my-margin"> </ion-grid>
+  <!-- textaria -->
   <ion-grid class="text-write green">
     <ion-textarea
       class="border"
@@ -25,7 +41,8 @@
       >리뷰완료</ion-button
     >
   </ion-grid>
-
+  <ion-grid class="my-margin"> </ion-grid>
+  <!-- photo-upload -->
   <div class="photo-upload ion-margin">
     <h3 *ngIf="images.length === 0" class="ion-padding ion-text-center">
       사진을 등록하세요!
@@ -50,4 +67,5 @@
       </ion-button>
     </ion-grid>
   </div>
+  <app-footer></app-footer>
 </ion-content>

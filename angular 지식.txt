@@ -1,0 +1,42 @@
+그저 god
+https://medium.com/free-code-camp/48-answers-on-stack-overflow-to-the-most-popular-angular-questions-52f9eb430ab0
+
+
+Components control views (html). They also communicate with other components and services to bring functionality to your app.
+
+Modules consist of one or more components. They do not control any html. Your modules declare which components can be used by components belonging to other modules, which classes will be injected by the dependency injector and which component gets bootstrapped. Modules allow you to manage your components to bring modularity to your app.
+
+angular reference
+<tag #refId>want to access<tag>
+<tag [ref]="refId.value">
+
+
+page 안에 page 부를때는 parent page module에서 모든 dependency, import 해결
+
+
+ionic 에서 angular 패키지 그냥 사용해도 됨
+대신 typescriptconfig에 추가해야할수도 있긴함
+	사용법 완전 동일
+
+
+page 안에 page에 component 쓰려면 parent와 child 에 둘다 declare해야함
+
+
+class variable 은 다른 모듈에서도 읽힐수 있음 and static으로 선언됨, but view에서는 언제나 this.var 만들어서 씀
+
+async pipe 없어도 *ngIf *ngFor 은 change 가 있으면 notify 됨
+	[*ngIf] 괄호 쓰면 에러남
+
+
+template event binding은 scope 개념이라서
+*ngFor 한 태그 안에서는 해당 iterator 접근 가능하며 param으로 event binding 도 가능 (이름 찾아감)
+event와 iterator는 scope상에서 찾아가기 때문에 중복 안됨
+    <ion-col *ngFor="let item of data.items">
+      <ion-card
+      (click)="onItemClickFunc(item, $event)">
+
+ internal variables exposed by the framework were prefixed with a $.
+자동으로 주입되는 내장 객체는 $ 표시 붙인채로 명명됨, 즉 템플릿 안에서는 event 가 아닌 $event 로 접근해야함
+
+
+ngInit 안에 observer 넣고 loading finnished subscribe 해야할지도

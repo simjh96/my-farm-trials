@@ -10,6 +10,7 @@ import { ReviewSearchPage } from './review-search.page';
 import { SearchBarSimpleComponent } from 'src/app/components/search-bar-simple/search-bar-simple.component';
 import { ItemListComponent } from 'src/app/components/item-list/item-list.component';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,11 @@ import { SharedDirectivesModule } from 'src/app/directives/shared-directives.mod
     ReviewSearchPageRoutingModule,
     SharedDirectivesModule,
   ],
-  declarations: [ReviewSearchPage, SearchBarSimpleComponent, ItemListComponent],
+  declarations: [
+    ReviewSearchPage,
+    SearchBarSimpleComponent,
+    ItemListComponent,
+    FooterComponent,
+  ],
 })
 export class ReviewSearchPageModule {}

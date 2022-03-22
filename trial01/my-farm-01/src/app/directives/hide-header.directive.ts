@@ -16,7 +16,7 @@ export class HideHeaderDirective implements OnInit {
   constructor(private renderer: Renderer2, private domCtrl: DomController) {}
   ngOnInit(): void {
     this.header = this.header.el;
-    console.log(this.header);
+    console.log(this);
     this.domCtrl.read(() => {
       this.headerHeight = this.header.clientHeight;
     });

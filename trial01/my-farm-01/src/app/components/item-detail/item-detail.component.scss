@@ -1,5 +1,5 @@
 .order-detail {
-  ion-grid:nth-child(1) {
+  ion-grid:nth-child(0) {
     height: 20px;
     display: flex;
     align-items: center;
@@ -10,5 +10,11 @@
       height: 150px;
       object-fit: cover;
     }
+  }
+  .following {
+    --background: #81c963;
+  }
+  .to-follow {
+    --background: #11912d;
   }
 }

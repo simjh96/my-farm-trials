@@ -10,6 +10,11 @@ import { HomePage } from './home.page';
 import { DefaultHomePage } from '../default-home/default-home.page';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 import { AgmCoreModule } from '@agm/core';
+import { NeighborFarmPage } from '../neighbor-farm/neighbor-farm.page';
+import { ItemDetailComponent } from 'src/app/components/item-detail/item-detail.component';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
+import { SelectComponent } from 'src/app/components/select/select.component';
+import { MyFarmPage } from '../my-farm/my-farm.page';
 
 @NgModule({
   imports: [
@@ -23,6 +28,14 @@ import { AgmCoreModule } from '@agm/core';
       language: (localStorage && localStorage.gml) || 'ko',
     }),
   ],
-  declarations: [HomePage, DefaultHomePage],
+  declarations: [
+    HomePage,
+    DefaultHomePage,
+    NeighborFarmPage,
+    ItemDetailComponent,
+    FooterComponent,
+    SelectComponent,
+    MyFarmPage,
+  ],
 })
 export class HomePageModule {}

@@ -1,11 +1,17 @@
+<!-- ref: 'cs-google-card-list-layout-2' -->
 <div class="order-detail">
   <ion-grid>
-    <h1 class="text-size-lg">주문 상품 상세</h1>
-  </ion-grid>
-  <ion-grid>
     <ion-row>
-      <ion-col class="ion-no-padding" size="12" size-md="6" size-lg="4">
-        <ion-card class="no-box-shadow border color-basic">
+      <ion-col
+        class="ion-no-padding ion-no-margin"
+        size="12"
+        size-md="6"
+        size-lg="4"
+      >
+        <ion-card
+          class="no-box-shadow border color-basic ion-no-margin"
+          (click)="onItemClickFunc($event)"
+        >
           <!--Card image-->
 
           <ion-img [src]="ithItemDetail.image"></ion-img>
@@ -36,12 +42,22 @@
               </p>
             </ion-label>
             <ion-button
-              class="button-small color-primary no-box-shadow"
-              (click)="onFollowFunc(item, $event)"
+              *ngIf="ithItemDetail.btFollowing == '구독중'"
+              class="button-small color-primary no-box-shadow following"
+              (click)="onFollowFunc($event)"
               slot="end"
               shape="round"
             >
-              {{ ithItemDetail.btFollowing }}
+              구독중
+            </ion-button>
+            <ion-button
+              *ngIf="ithItemDetail.btFollowing == '구독하기'"
+              class="button-small color-primary no-box-shadow to-follow"
+              (click)="onFollowFunc($event)"
+              slot="end"
+              shape="round"
+            >
+              구독하기
             </ion-button>
           </ion-item>
         </ion-card>
