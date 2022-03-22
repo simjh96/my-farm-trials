@@ -19,7 +19,7 @@ export class HomePage implements OnInit {
 
   tabChange(newTab: string) {
     console.log(newTab);
-    this.initialTab = false;
     this.currentTab.next(newTab);
+    this.initialTab = false;
   }
 }

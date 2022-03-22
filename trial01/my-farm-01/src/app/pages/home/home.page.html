@@ -28,6 +28,6 @@
   <app-default-home
     scrollEvents="true"
     [appHideHeader]="header"
-    *ngIf="initialTab || (currentTab | async) === 'default-home'"
+    *ngIf="(currentTab | async) === 'default-home' || initialTab"
   ></app-default-home>
 </ion-content>
