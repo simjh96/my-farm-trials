@@ -32,7 +32,11 @@ const routes: Routes = [
       import('./pages/review-write/review-write.module').then(
         (m) => m.ReviewWritePageModule
       ),
+  },  {
+    path: 'neighbor-farm',
+    loadChildren: () => import('./pages/neighbor-farm/neighbor-farm.module').then( m => m.NeighborFarmPageModule)
   },
+
 ];
 
 @NgModule({
