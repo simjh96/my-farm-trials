@@ -1,0 +1,53 @@
+<ion-header #header class="green">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize">리뷰 작성</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollEvents="true" [appHideHeader]="header" class="green">
+  <app-item-detail [ithItemDetail]="ithItemDetail"></app-item-detail>
+  <app-chip-sliders
+    [keys]="keys"
+    [reviewKeywords]="reviewKeywords"
+  ></app-chip-sliders>
+
+  <ion-grid class="text-write green">
+    <ion-textarea
+      class="border"
+      rows="6"
+      cols="20"
+      placeholder="키워드를 이용해 내용 작성 기능 구현 필요..."
+    ></ion-textarea>
+    <ion-button class="submit" color="success" expand="full"
+      >리뷰완료</ion-button
+    >
+  </ion-grid>
+
+  <div class="photo-upload ion-margin">
+    <h3 *ngIf="images.length === 0" class="ion-padding ion-text-center">
+      사진을 등록하세요!
+    </h3>
+    <ion-grid>
+      <ion-thumbnail (click)="selectImage()">
+        <p class="tex-size-sm">사진 추가</p>
+        <ion-icon name="camera" class="green text-size-lg"></ion-icon>
+      </ion-thumbnail>
+    </ion-grid>
+
+    <ion-grid *ngFor="let file of images; let i = index">
+      <ion-thumbnail>
+        <ion-img [src]="file.data"></ion-img>
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">
+        {{ (file.path.length>10)? '...'+(file.path |
+        slice:-10:file.path.length):(file.path) }}
+      </ion-label>
+      <ion-button fill="clear" (click)="deleteImage(file)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-grid>
+  </div>
+</ion-content>

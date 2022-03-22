@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./review-search.page.scss'],
 })
 export class ReviewSearchPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  public cardWide: boolean;
+  constructor() {
+    this.cardWide = true;
   }
 
+  ngOnInit() {}
 }

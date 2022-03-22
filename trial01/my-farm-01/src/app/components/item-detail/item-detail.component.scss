@@ -1,0 +1,14 @@
+.order-detail {
+  ion-grid:nth-child(1) {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ion-grid {
+    ion-img {
+      height: 150px;
+      object-fit: cover;
+    }
+  }
+}

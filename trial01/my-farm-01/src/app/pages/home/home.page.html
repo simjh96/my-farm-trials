@@ -1,22 +1,33 @@
 <!-- Header -->
-<ion-header class="green">
-  <ion-toolbar>
+<ion-header #header>
+  <ion-toolbar class="green">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>홈 메뉴</ion-title>
   </ion-toolbar>
+  <ion-toolbar class="tabBar">
+    <ion-row>
+      <ion-button fill="none" (click)="tabChange('default-home')">
+        <ion-icon name="home"></ion-icon>
+        <ion-label>홈</ion-label>
+      </ion-button>
+      <ion-button fill="none" (click)="tabChange('neighbor-farm')">
+        <ion-icon name="leaf"></ion-icon>
+        <ion-label>이웃농장</ion-label>
+      </ion-button>
+      <ion-button fill="none" (click)="tabChange('my-farm')">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>마이농장</ion-label>
+      </ion-button>
+    </ion-row>
+  </ion-toolbar>
 </ion-header>
 <!-- Content -->
-<ion-content class="green">
-  <ion-grid>
-    <ion-row>
-      <!--Ionic -->
-      <ion-col size="12">
-        <ion-card class="ion-padding no-box-shadow border border-radius green">
-          <p>링크만 해주는 화면임</p>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content [fullscreen]="true" class="green">
+  <app-default-home
+    scrollEvents="true"
+    [appHideHeader]="header"
+    *ngIf="(currentTab | async) === 'default-home' || initialTab"
+  ></app-default-home>
 </ion-content>

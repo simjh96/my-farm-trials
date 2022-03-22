@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { PageDetail } from './interface/page-detail';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  public appPages = [];
+  public appPages: PageDetail[];
   headerMenuItem = {
     image: '',
     title: '',
@@ -24,9 +25,27 @@ export class AppComponent {
         component: '',
         singlePage: false,
       },
+      {
+        url: 'review-write/1',
+        title: '리뷰 작성 진행중...',
+        theme: 'textarea',
+        icon: 'chevron-forward-circle',
+        listView: true,
+        component: '',
+        singlePage: false,
+      },
+      {
+        url: 'review-detail/1',
+        title: '리뷰 상세 구상중...',
+        theme: 'item-detail',
+        icon: 'chevron-forward-circle',
+        listView: true,
+        component: '',
+        singlePage: false,
+      },
     ];
   }
-  openPage(page) {
-    this.navController.navigateRoot([page.url], {});
+  openPage(url: string) {
+    this.navController.navigateRoot([url], {});
   }
 }

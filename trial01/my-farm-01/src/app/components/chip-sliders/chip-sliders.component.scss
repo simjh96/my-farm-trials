@@ -1,0 +1,15 @@
+.keyword-chip-select {
+  ion-slide {
+    height: 25px;
+    border-radius: 15px;
+    margin: 2px;
+    color: rgba(61, 60, 60, 0.692);
+    border: 1px solid rgba(61, 60, 60, 0.692);
+    ion-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}

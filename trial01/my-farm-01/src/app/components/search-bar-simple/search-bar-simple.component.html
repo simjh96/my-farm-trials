@@ -1,3 +1,4 @@
+<!-- card width design slim -->
 <ion-grid>
   <ion-row>
     <!-- List -->
@@ -6,29 +7,6 @@
         <ion-list-header class="ion-no-padding">
           <ion-searchbar class="ion-no-padding"></ion-searchbar>
         </ion-list-header>
-
-        <ion-item
-          class="default-item border border-radius ion-margin-top"
-          *ngFor="let item of items.items"
-        >
-          <!-- Avatar-->
-          <ion-avatar slot="start">
-            <img [src]="item.image" />
-          </ion-avatar>
-          <!-- Text -->
-          <ion-label>
-            <h2
-              class="text-size-md text-color-primary font-regular ion-text-wrap"
-            >
-              {{ item.title }}
-            </h2>
-            <h2
-              class="text-size-sm text-color-primary font-regular ion-text-wrap"
-            >
-              {{ item.subtitle }}
-            </h2>
-          </ion-label>
-        </ion-item>
       </ion-list>
     </ion-col>
   </ion-row>
