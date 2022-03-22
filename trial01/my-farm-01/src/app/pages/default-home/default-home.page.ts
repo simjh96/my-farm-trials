@@ -19,15 +19,11 @@ import { ItemDetailService } from 'src/app/services/item-detail.service';
 })
 export class DefaultHomePage implements OnInit {
   public items: ItemAvatarDetail[];
-  title: string = 'AGM project';
-  latitude: number;
-  longitude: number;
+  title = 'AGM project';
+  latitudes: number[];
+  longitudes: number[];
   zoom: number;
-  address: string;
-  private geoCoder;
-
-  @ViewChild('search', { static: false })
-  public searchElementRef: ElementRef;
+  cnt: number;
 
   constructor(
     public itemDetailService: ItemDetailService,
@@ -35,75 +31,17 @@ export class DefaultHomePage implements OnInit {
     private ngZone: NgZone
   ) {
     this.items = itemDetailService.itemDetail.itemAvatars;
+    //set latitude, longitude and zoom
+    this.cnt = 3;
+    this.latitudes = [
+      37.566469829817876, 37.576469829817876, 37.586469829817876,
+    ];
+    this.longitudes = [127.0902720644886, 127.1102720644886, 127.1002720644886];
+    this.zoom = 12;
   }
 
   ngOnInit() {
     //load Places Autocomplete
-    this.mapsAPILoader.load().then(() => {
-      this.setCurrentLocation();
-      this.geoCoder = new google.maps.Geocoder();
-
-      let autocomplete = new google.maps.places.Autocomplete(
-        this.searchElementRef.nativeElement,
-        {
-          types: ['address'],
-        }
-      );
-      autocomplete.addListener('place_changed', () => {
-        this.ngZone.run(() => {
-          //get the place result
-          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-
-          //verify result
-          if (place.geometry === undefined || place.geometry === null) {
-            return;
-          }
-
-          //set latitude, longitude and zoom
-          this.latitude = place.geometry.location.lat();
-          this.longitude = place.geometry.location.lng();
-          this.zoom = 12;
-        });
-      });
-    });
-  }
-
-  // Get Current Location Coordinates
-  private setCurrentLocation() {
-    if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.latitude = position.coords.latitude;
-        this.longitude = position.coords.longitude;
-        this.zoom = 8;
-        this.getAddress(this.latitude, this.longitude);
-      });
-    }
-  }
-
-  markerDragEnd($event: any) {
-    console.log($event);
-    this.latitude = $event.coords.lat;
-    this.longitude = $event.coords.lng;
-    this.getAddress(this.latitude, this.longitude);
-  }
-
-  getAddress(latitude, longitude) {
-    this.geoCoder.geocode(
-      { location: { lat: latitude, lng: longitude } },
-      (results, status) => {
-        console.log(results);
-        console.log(status);
-        if (status === 'OK') {
-          if (results[0]) {
-            this.zoom = 12;
-            this.address = results[0].formatted_address;
-          } else {
-            window.alert('No results found');
-          }
-        } else {
-          window.alert('Geocoder failed due to: ' + status);
-        }
-      }
-    );
+    this.mapsAPILoader.load().then(() => {});
   }
 }

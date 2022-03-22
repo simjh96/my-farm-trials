@@ -20,7 +20,7 @@ import { AgmCoreModule } from '@agm/core';
     SharedDirectivesModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAvsbUCSE2t2YZa3hw9RF3Imrjj9KXb1iU',
-      libraries: ['places'],
+      language: (localStorage && localStorage.gml) || 'ko',
     }),
   ],
   declarations: [HomePage, DefaultHomePage],

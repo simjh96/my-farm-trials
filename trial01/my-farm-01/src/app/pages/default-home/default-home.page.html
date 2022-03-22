@@ -39,7 +39,7 @@
   <ion-grid class="slider-list">
     <ion-row>
       <ion-item class="title" lines="none">
-        <ion-label>인기 농장</ion-label>
+        <ion-label>오늘의 재배일지</ion-label>
         <ion-item slot="end" lines="none">
           <ion-label>더보기</ion-label>
           <ion-icon name="chevron-forward"></ion-icon>
@@ -82,27 +82,26 @@
   <!-- 지도 -->
   <!-- https://www.freakyjolly.com/ionic-5-angular-google-maps-using-agm/ -->
   <ion-grid class="agm">
-    <input
-      type="text"
-      class="native-input sc-ion-input-ios"
-      (keydown.enter)="$event.preventDefault()"
-      placeholder="Search Nearest Location"
-      autocorrect="off"
-      autocapitalize="off"
-      spellcheck="off"
-      type="text"
-      #search
-    />
-    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+    <ion-item class="title" lines="none">
+      <ion-label>농장 위치</ion-label>
+      <ion-item slot="end" lines="none">
+        <ion-label>더보기</ion-label>
+        <ion-icon name="chevron-forward"></ion-icon>
+      </ion-item>
+    </ion-item>
+
+    <h3 class="text-size-sm">인근농장: {{cnt}}</h3>
+    <agm-map
+      [latitude]="latitudes[0]"
+      [longitude]="longitudes[0]"
+      [zoom]="zoom"
+    >
       <agm-marker
-        [latitude]="latitude"
-        [longitude]="longitude"
+        *ngFor="let i of [0, 1, 2]"
+        [latitude]="latitudes[i]"
+        [longitude]="longitudes[i]"
         [markerDraggable]="true"
-        (dragEnd)="markerDragEnd($event)"
       ></agm-marker>
     </agm-map>
-    <h5>Address: {{address}}</h5>
-    <div>Latitude: {{latitude}}</div>
-    <div>Longitude: {{longitude}}</div>
   </ion-grid>
 </ion-content>
