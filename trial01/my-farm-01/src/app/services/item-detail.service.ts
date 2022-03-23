@@ -107,6 +107,18 @@ export class ItemDetailService {
           brix: '9~10brix',
           weight: '25~30g',
           certi: '무농약',
+          timeLine: [
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+          ],
         },
         {
           id: 2,
@@ -126,6 +138,18 @@ export class ItemDetailService {
           brix: '9~10brix',
           weight: '25~30g',
           certi: '무농약',
+          timeLine: [
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+          ],
         },
         {
           id: 3,
@@ -145,6 +169,18 @@ export class ItemDetailService {
           brix: '9~10brix',
           weight: '25~30g',
           certi: '무농약',
+          timeLine: [
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+          ],
         },
         {
           id: 4,
@@ -164,6 +200,18 @@ export class ItemDetailService {
           brix: '9~10brix',
           weight: '25~30g',
           certi: '무농약',
+          timeLine: [
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+          ],
         },
         {
           id: 5,
@@ -183,6 +231,18 @@ export class ItemDetailService {
           brix: '9~10brix',
           weight: '25~30g',
           certi: '무농약',
+          timeLine: [
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+          ],
         },
         {
           id: 6,
@@ -202,6 +262,18 @@ export class ItemDetailService {
           brix: '9~10brix',
           weight: '25~30g',
           certi: '무농약',
+          timeLine: [
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+          ],
         },
         {
           id: 7,
@@ -221,6 +293,18 @@ export class ItemDetailService {
           brix: '9~10brix',
           weight: '25~30g',
           certi: '무농약',
+          timeLine: [
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+          ],
         },
         {
           id: 8,
@@ -240,6 +324,18 @@ export class ItemDetailService {
           brix: '9~10brix',
           weight: '25~30g',
           certi: '무농약',
+          timeLine: [
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+          ],
         },
         {
           id: 9,
@@ -259,6 +355,18 @@ export class ItemDetailService {
           brix: '9~10brix',
           weight: '25~30g',
           certi: '무농약',
+          timeLine: [
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+          ],
         },
         {
           id: 10,
@@ -278,6 +386,18 @@ export class ItemDetailService {
           brix: '9~10brix',
           weight: '25~30g',
           certi: '무농약',
+          timeLine: [
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+          ],
         },
         {
           id: 11,
@@ -297,6 +417,18 @@ export class ItemDetailService {
           brix: '9~10brix',
           weight: '25~30g',
           certi: '무농약',
+          timeLine: [
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+          ],
         },
         {
           id: 12,
@@ -316,17 +448,29 @@ export class ItemDetailService {
           brix: '9~10brix',
           weight: '25~30g',
           certi: '무농약',
+          timeLine: [
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+            { icon: 'leaf', date: '2022.00', content: '꽃눈분화' },
+          ],
         },
       ],
     };
   }
 
-  getItemDetail(itemId: number) {
+  getItemDetail(itemId: number): ItemDetail {
     // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
     const result = $(this.itemDetail.itemDetails).filter(function (_i, n) {
       return n['id'] === itemId;
     });
-    return result[0];
+    return result[0] as unknown as ItemDetail;
   }
 
   getAllItemDetail() {

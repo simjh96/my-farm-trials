@@ -53,3 +53,8 @@ Jquery filter 는 i: number, e: Element 여서 typescript var.property 가 안�
 
 CustomPipe 는 pipes.ts 모듈 만들어서 거기서 import export 하게 한다음에 다른 모듈에서 import 해서 씀
 근데 singletone 아닌듯... 쓰는 모듈마다 import 해서 써야함
+
+
+import 해서 쓰는 모듈들은 swiper 딱 그 페이지에서만 import 해주면 안에 outlet으로 불려진 부분들도 모두
+찾을수있는 scope에 생성됨, 굳이 root에 import 안해도 됨
+service랑 이점이 다르네

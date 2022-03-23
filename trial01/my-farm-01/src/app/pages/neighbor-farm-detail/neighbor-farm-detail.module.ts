@@ -11,6 +11,9 @@ import { FakeTabComponent } from 'src/app/components/fake-tab/fake-tab.component
 import { FarmDataPage } from '../farm-data/farm-data.page';
 import { GrowthDiaryPage } from '../growth-diary/growth-diary.page';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
+import { Pipes } from 'src/app/pipes/pipe';
+import { SwiperModule } from 'swiper/angular';
+import { FooterComponent } from 'src/app/components/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -19,12 +22,15 @@ import { SharedDirectivesModule } from 'src/app/directives/shared-directives.mod
     IonicModule,
     NeighborFarmDetailPageRoutingModule,
     SharedDirectivesModule,
+    Pipes,
+    SwiperModule,
   ],
   declarations: [
     NeighborFarmDetailPage,
     FakeTabComponent,
     FarmDataPage,
     GrowthDiaryPage,
+    FooterComponent,
   ],
 })
 export class NeighborFarmDetailPageModule {}

@@ -18,6 +18,7 @@ import { MyFarmPage } from '../my-farm/my-farm.page';
 import { FakeTabComponent } from 'src/app/components/fake-tab/fake-tab.component';
 import { TruncatePipe } from 'src/app/pipes/truncate.pipe';
 import { Pipes } from 'src/app/pipes/pipe';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   imports: [
@@ -29,7 +30,7 @@ import { Pipes } from 'src/app/pipes/pipe';
     Pipes,
 
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAvsbUCSE2t2YZa3hw9RF3Imrjj9KXb1iU',
+      apiKey: environment.API_KEY,
       language: (localStorage && localStorage.gml) || 'ko',
     }),
   ],

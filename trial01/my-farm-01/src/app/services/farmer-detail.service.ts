@@ -14,6 +14,7 @@ export class FarmerDetailService {
       farmerDetails: [
         {
           id: 1,
+          farmImg: 'assets/images/contents/farm/farm01.jpg',
           title: '김농부씨',
           avatarSubTitle: '농장배지 100개 보유중',
           follower: 0,
@@ -27,6 +28,7 @@ export class FarmerDetailService {
         },
         {
           id: 2,
+          farmImg: 'assets/images/contents/farm/farm02.jpg',
           title: '김농부씨',
           avatarSubTitle: '농장배지 100개 보유중',
           follower: 0,
@@ -40,6 +42,7 @@ export class FarmerDetailService {
         },
         {
           id: 3,
+          farmImg: 'assets/images/contents/farm/farm03.jpg',
           title: '김농부씨',
           avatarSubTitle: '농장배지 100개 보유중',
           follower: 0,
@@ -53,6 +56,7 @@ export class FarmerDetailService {
         },
         {
           id: 4,
+          farmImg: 'assets/images/contents/farm/farm04.jpg',
           title: '김농부씨',
           avatarSubTitle: '농장배지 100개 보유중',
           follower: 0,
@@ -66,6 +70,7 @@ export class FarmerDetailService {
         },
         {
           id: 5,
+          farmImg: 'assets/images/contents/farm/farm05.jpg',
           title: '김농부씨',
           avatarSubTitle: '농장배지 100개 보유중',
           follower: 0,
@@ -79,6 +84,7 @@ export class FarmerDetailService {
         },
         {
           id: 6,
+          farmImg: 'assets/images/contents/farm/farm06.jpg',
           title: '김농부씨',
           avatarSubTitle: '농장배지 100개 보유중',
           follower: 0,
@@ -92,6 +98,7 @@ export class FarmerDetailService {
         },
         {
           id: 7,
+          farmImg: 'assets/images/contents/farm/farm07.jpg',
           title: '김농부씨',
           avatarSubTitle: '농장배지 100개 보유중',
           follower: 0,
@@ -105,6 +112,7 @@ export class FarmerDetailService {
         },
         {
           id: 8,
+          farmImg: 'assets/images/contents/farm/farm08.jpg',
           title: '김농부씨',
           avatarSubTitle: '농장배지 100개 보유중',
           follower: 0,
@@ -118,6 +126,7 @@ export class FarmerDetailService {
         },
         {
           id: 9,
+          farmImg: 'assets/images/contents/farm/farm09.jpg',
           title: '김농부씨',
           avatarSubTitle: '농장배지 100개 보유중',
           follower: 0,
@@ -131,6 +140,7 @@ export class FarmerDetailService {
         },
         {
           id: 10,
+          farmImg: 'assets/images/contents/farm/farm10.jpg',
           title: '김농부씨',
           avatarSubTitle: '농장배지 100개 보유중',
           follower: 0,
@@ -144,6 +154,7 @@ export class FarmerDetailService {
         },
         {
           id: 11,
+          farmImg: 'assets/images/contents/farm/farm11.jpg',
           title: '김농부씨',
           avatarSubTitle: '농장배지 100개 보유중',
           follower: 0,
@@ -157,6 +168,7 @@ export class FarmerDetailService {
         },
         {
           id: 12,
+          farmImg: 'assets/images/contents/farm/farm12.jpg',
           title: '김농부씨',
           avatarSubTitle: '농장배지 100개 보유중',
           follower: 0,
@@ -175,9 +187,9 @@ export class FarmerDetailService {
   getFarmerDetail(itemId: number) {
     // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
     const result = $(this.farmerDetail.farmerDetails).filter(function (_i, n) {
-      return +n.id === itemId;
+      return +n['id'] === itemId;
     });
-    return result[0];
+    return result[0] as unknown as FarmerDetail;
   }
   getAllFarmerDetail() {
     return this.farmerDetail.farmerDetails;

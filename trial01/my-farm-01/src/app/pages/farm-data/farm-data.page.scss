@@ -1,3 +1,4 @@
+// desc
 .desc-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -20,6 +21,139 @@
   }
 }
 
-.one {
-  border: 1px solid black;
+// timeline
+.scroll-container {
+  overflow: auto;
+  .scrollable {
+    width: 200vw;
+    .slide {
+      width: 80px;
+      height: 220px;
+      position: relative;
+      &::before {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 3px;
+        height: 3px;
+        border: 1px solid #17b239;
+        border-radius: 50%;
+        left: 50%;
+        top: 98.5px;
+      }
+      &::after {
+        display: block;
+        content: "";
+        border: 1px solid #17b239;
+        position: absolute;
+        width: 100%;
+        top: 100px;
+      }
+      &:nth-child(2n) {
+        padding-top: 120px;
+      }
+      .default-item {
+        box-shadow: 2px 2px 2px #17b239;
+        color: #17b239;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        ion-icon {
+          margin: 0 0 5px 0;
+        }
+        ion-grid {
+          margin: 0;
+          p {
+            font-size: 0.8em;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// desc-box
+.desc-box {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+
+  ion-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    height: 20vw;
+    border: 1px solid #17b239;
+    background-color: #17b239;
+
+    p {
+      color: #f2f5f3;
+      padding: 0;
+      margin: 0;
+    }
+  }
+}
+
+// farmer-desc
+.farmer-desc {
+  .desc-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    ion-img {
+      padding: 10px 10px 10px 0;
+      width: 40vw;
+      height: 40vw;
+      object-fit: cover;
+    }
+    .txt-box {
+      width: 40vw;
+      overflow: hidden;
+      padding-left: 20px;
+      h3 {
+        padding: 10px 0 10px 0;
+      }
+      p {
+        padding: 0px 10px 0 0;
+      }
+    }
+  }
+}
+
+// location
+.location {
+  background-color: #fff;
+  position: relative;
+  .img-wrapper {
+    ion-img {
+      height: 60vw;
+      object-fit: cover;
+    }
+  }
+  .swiper-pagination {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    z-index: 999;
+  }
+}
+
+// reviews
+.reviews {
+  background-color: #fff;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  ion-row {
+    display: flex;
+    justify-content: center;
+    width: 95vw;
+  }
 }

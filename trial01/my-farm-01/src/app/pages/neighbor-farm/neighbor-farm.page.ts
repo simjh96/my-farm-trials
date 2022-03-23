@@ -62,6 +62,5 @@ export class NeighborFarmPage implements OnInit {
     } else {
       params.btFollowing = '구독하기';
     }
-    // this.toastCtrl.presentToast('onFollow');
   }
 }

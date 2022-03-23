@@ -15,4 +15,5 @@ export interface ItemDetail {
   brix: string;
   weight: string;
   certi: string;
+  timeLine: Array<any>;
 }

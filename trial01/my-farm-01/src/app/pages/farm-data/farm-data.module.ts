@@ -7,9 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { FarmDataPageRoutingModule } from './farm-data-routing.module';
 
 import { FarmDataPage } from './farm-data.page';
+import { Pipes } from 'src/app/pipes/pipe';
+
+import { FooterComponent } from 'src/app/components/footer/footer.component';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, FarmDataPageRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    FarmDataPageRoutingModule,
+    Pipes,
+  ],
   declarations: [FarmDataPage],
 })
 export class FarmDataPageModule {}

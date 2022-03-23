@@ -1,5 +1,6 @@
 export interface FarmerDetail {
   id: number;
+  farmImg: string;
   title: string;
   avatarSubTitle: string;
   follower: number;
