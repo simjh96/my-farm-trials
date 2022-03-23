@@ -7,7 +7,7 @@ import { SwiperComponent } from 'swiper/angular';
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination } from 'swiper';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 // install Swiper modules
 SwiperCore.use([Pagination]);
 
@@ -23,6 +23,7 @@ export class FarmDataPage implements OnInit {
   constructor(
     private itemDetailService: ItemDetailService,
     private farmerDetailService: FarmerDetailService,
+    private navController: NavController,
     public alertController: AlertController
   ) {}
 
@@ -56,5 +57,8 @@ export class FarmDataPage implements OnInit {
 
     const { role } = await alert.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
+  }
+  openPage(url: string) {
+    this.navController.navigateForward(url, {});
   }
 }

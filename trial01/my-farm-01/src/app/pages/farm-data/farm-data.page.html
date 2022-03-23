@@ -6,8 +6,8 @@
         <img [src]="ithItemDetail.avatar" />
       </ion-avatar>
       <ion-col
-        ><ion-label>{{ithItemDetail.avatarTitle}}</ion-label
-        ><ion-label>{{ithItemDetail.title}}</ion-label>
+        ><ion-grid>{{ithItemDetail.avatarTitle}}</ion-grid
+        ><ion-grid>{{ithItemDetail.title}}</ion-grid>
       </ion-col>
     </ion-item>
     <ion-card class="ion-no-margin">
@@ -47,30 +47,26 @@
   <ion-grid class="desc-box">
     <ion-grid class="afterHarvest">
       <ion-button (click)="presentAlert()" color="success"
-        ><p>수확 후</p>
-        <ion-icon name="help-circle-outline"></ion-icon>
-      </ion-button>
+        ><p>수확후</p> </ion-button
+      ><ion-icon name="help-circle-outline" (click)="presentAlert()"></ion-icon>
       <strong><p>{{ithItemDetail.afterHarvest}}</p></strong></ion-grid
     >
     <ion-grid class="brix">
       <ion-button (click)="presentAlert()" color="success"
-        ><p>당도</p>
-        <ion-icon name="help-circle-outline"></ion-icon>
-      </ion-button>
+        ><p>당도</p> </ion-button
+      ><ion-icon name="help-circle-outline" (click)="presentAlert()"></ion-icon>
       <strong><p>{{ithItemDetail.brix}}</p></strong></ion-grid
     >
     <ion-grid class="weight">
       <ion-button (click)="presentAlert()" color="success"
-        ><p>(개당)무게</p>
-        <ion-icon name="help-circle-outline"></ion-icon>
-      </ion-button>
+        ><p>(개당)무게</p> </ion-button
+      ><ion-icon name="help-circle-outline" (click)="presentAlert()"></ion-icon>
       <strong><p>{{ithItemDetail.weight}}</p></strong></ion-grid
     >
     <ion-grid class="certi">
       <ion-button (click)="presentAlert()" color="success"
-        ><p>인증</p>
-        <ion-icon name="help-circle-outline"></ion-icon>
-      </ion-button>
+        ><p>인증</p> </ion-button
+      ><ion-icon name="help-circle-outline" (click)="presentAlert()"></ion-icon>
       <strong><p>{{ithItemDetail.certi}}</p></strong></ion-grid
     >
   </ion-grid>
@@ -112,8 +108,12 @@
   <ion-grid class="reviews">
     <ion-text color="danger">구매자 리뷰</ion-text>
     <ion-col>
-      <ion-row> <ion-icon size="large" name="alert"></ion-icon> </ion-row
-      ><ion-row>페이지 준비중입니다...</ion-row>
+      <ion-row> <ion-icon size="large" name="alert"></ion-icon> </ion-row>
+      <ion-row>페이지 준비중입니다...</ion-row>
+      <ion-button (click)="openPage('review-search')" color="success">
+        <ion-icon slot="start" name="search-circle-outline"></ion-icon>
+        리뷰 작성 하러가기
+      </ion-button>
     </ion-col>
   </ion-grid>
 

@@ -1,3 +1,5 @@
+// item detail
+
 // desc
 .desc-wrapper {
   display: flex;
@@ -91,7 +93,22 @@
     height: 20vw;
     border: 1px solid #17b239;
     background-color: #17b239;
+    position: relative;
 
+    ion-button {
+      position: relative;
+      width: 70%;
+      font-size: 0.8em;
+      padding: 0;
+      margin: 0;
+    }
+    ion-icon {
+      position: absolute;
+      color: #fff;
+      top: 0px;
+      right: 0px;
+      z-index: 3;
+    }
     p {
       color: #f2f5f3;
       padding: 0;
@@ -151,6 +168,10 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  ion-col {
+    display: flex;
+    flex-direction: column;
+  }
   ion-row {
     display: flex;
     justify-content: center;

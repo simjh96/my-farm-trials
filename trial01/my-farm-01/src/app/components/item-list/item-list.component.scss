@@ -1,3 +1,7 @@
+* {
+  font-family: "Nanum Gothic";
+}
+
 ion-col {
   position: relative;
   ion-button {
@@ -16,14 +20,14 @@ ion-col {
       margin: 0;
 
       h1 {
-        font-size: 0.8em;
+        font-size: 0.7em;
         white-space: initial;
-        width: 130px;
+        width: 65%;
         height: 40px;
       }
     }
     p {
-      font-size: 0.7em;
+      font-size: 0.6em;
     }
   }
 }
