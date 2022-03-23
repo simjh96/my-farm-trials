@@ -1,9 +1,18 @@
 export interface ItemDetail {
   id: number;
-  iconLike: string;
-  image: string;
   title: string;
-  price: string;
-  btButton: string;
-  isLike: boolean;
+  cultivar: string;
+  description: string;
+  image: string;
+  avatar: string;
+  avatarTitle: string;
+  avatarSubTitle: string;
+  btFollowing: string;
+  badge: string;
+  farmer: string;
+  farmerId: number;
+  afterHarvest: string;
+  brix: string;
+  weight: string;
+  certi: string;
 }

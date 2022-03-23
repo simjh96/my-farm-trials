@@ -11,6 +11,7 @@ import { SearchBarSimpleComponent } from 'src/app/components/search-bar-simple/s
 import { ItemListComponent } from 'src/app/components/item-list/item-list.component';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
+import { Pipes } from 'src/app/pipes/pipe';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
     IonicModule,
     ReviewSearchPageRoutingModule,
     SharedDirectivesModule,
+    Pipes,
   ],
   declarations: [
     ReviewSearchPage,

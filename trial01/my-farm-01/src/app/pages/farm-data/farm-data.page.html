@@ -1,0 +1,29 @@
+<ion-content scrollEvents="true">
+  <ion-grid class="item-detail ion-margin-top">
+    <ion-item class="ion-margin-bottom">
+      <ion-avatar slot="start">
+        <img [src]="ithItemDetail.avatar" />
+      </ion-avatar>
+      <ion-col
+        ><ion-label>{{ithItemDetail.avatarTitle}}</ion-label
+        ><ion-label>{{ithItemDetail.title}}</ion-label>
+      </ion-col>
+    </ion-item>
+    <ion-card class="ion-no-margin">
+      <ion-card-content class="ion-no-margin ion-no-padding">
+        <ion-row class="desc-wrapper">
+          <ion-img [src]="ithItemDetail.image"></ion-img>
+
+          <ion-col class="txt-box">
+            <h3 class="ion-text-lg">
+              <strong>{{ithItemDetail.cultivar}}</strong>
+            </h3>
+            <p>{{ithItemDetail.description}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+</ion-content>
+
+품종 : 킹스베리

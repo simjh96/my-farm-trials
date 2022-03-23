@@ -40,3 +40,16 @@ event와 iterator는 scope상에서 찾아가기 때문에 중복 안됨
 
 
 ngInit 안에 observer 넣고 loading finnished subscribe 해야할지도
+
+
+nested page module 이라고 service provided in root 에서 벗어나진 않는다...
+	다만 @input으로 받은 객체를 this.input 하려면 constructor가 아닌 onInit에서 써야함
+
+
+Jquery filter 는 i: number, e: Element 여서 typescript var.property 가 안먹히고 var['property'] 해야
+검사 에러 안나고 넘어감
+
+
+
+CustomPipe 는 pipes.ts 모듈 만들어서 거기서 import export 하게 한다음에 다른 모듈에서 import 해서 씀
+근데 singletone 아닌듯... 쓰는 모듈마다 import 해서 써야함

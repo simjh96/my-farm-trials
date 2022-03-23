@@ -1,27 +1,9 @@
 <!-- Header -->
 <ion-header #header>
-  <ion-toolbar class="green">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>홈 메뉴</ion-title>
-  </ion-toolbar>
-  <ion-toolbar class="tabBar">
-    <ion-row>
-      <ion-button fill="none" (click)="tabChange('default-home')">
-        <ion-icon name="home"></ion-icon>
-        <ion-label>홈</ion-label>
-      </ion-button>
-      <ion-button fill="none" (click)="tabChange('neighbor-farm')">
-        <ion-icon name="leaf"></ion-icon>
-        <ion-label>이웃농장</ion-label>
-      </ion-button>
-      <ion-button fill="none" (click)="tabChange('my-farm')">
-        <ion-icon name="person"></ion-icon>
-        <ion-label>마이농장</ion-label>
-      </ion-button>
-    </ion-row>
-  </ion-toolbar>
+  <app-fake-tab
+    [tabInput]="tabInput"
+    (tabChange)="tabChange($event)"
+  ></app-fake-tab>
 </ion-header>
 <!-- Content -->
 <ion-content [fullscreen]="true" class="green">

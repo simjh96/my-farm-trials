@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { ItemAvatarDetail } from 'src/app/interface/item-avatar-detail';
+
+import { ItemDetail } from 'src/app/interface/item-detail';
 import { ItemDetailService } from 'src/app/services/item-detail.service';
 
 @Component({
@@ -10,19 +11,20 @@ import { ItemDetailService } from 'src/app/services/item-detail.service';
 })
 export class ItemListComponent implements OnInit {
   @Input() cardWide: boolean;
-  items: ItemAvatarDetail[];
+  items: ItemDetail[];
 
   constructor(
     public navController: NavController,
     public itemDetailService: ItemDetailService
   ) {
-    this.items = itemDetailService.itemDetail.itemAvatars;
+    this.items = itemDetailService.getAllItemDetail();
     this.cardWide = true;
   }
 
   ngOnInit() {}
 
   openPage(url: string) {
+    console.log(url);
     this.navController.navigateForward(url, {});
   }
 }

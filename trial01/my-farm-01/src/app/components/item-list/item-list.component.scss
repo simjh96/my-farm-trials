@@ -10,8 +10,21 @@ ion-col {
   }
   ion-label {
     height: 100px;
-    display: flex;
-    flex-direction: column;
+    white-space: initial;
+
+    .two-line {
+      margin: 0;
+
+      h1 {
+        font-size: 0.8em;
+        white-space: initial;
+        width: 130px;
+        height: 40px;
+      }
+    }
+    p {
+      font-size: 0.7em;
+    }
   }
 }
 

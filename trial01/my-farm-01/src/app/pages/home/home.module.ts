@@ -15,6 +15,9 @@ import { ItemDetailComponent } from 'src/app/components/item-detail/item-detail.
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { SelectComponent } from 'src/app/components/select/select.component';
 import { MyFarmPage } from '../my-farm/my-farm.page';
+import { FakeTabComponent } from 'src/app/components/fake-tab/fake-tab.component';
+import { TruncatePipe } from 'src/app/pipes/truncate.pipe';
+import { Pipes } from 'src/app/pipes/pipe';
 
 @NgModule({
   imports: [
@@ -23,6 +26,8 @@ import { MyFarmPage } from '../my-farm/my-farm.page';
     IonicModule,
     HomePageRoutingModule,
     SharedDirectivesModule,
+    Pipes,
+
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAvsbUCSE2t2YZa3hw9RF3Imrjj9KXb1iU',
       language: (localStorage && localStorage.gml) || 'ko',
@@ -36,6 +41,7 @@ import { MyFarmPage } from '../my-farm/my-farm.page';
     FooterComponent,
     SelectComponent,
     MyFarmPage,
+    FakeTabComponent,
   ],
 })
 export class HomePageModule {}

@@ -1,0 +1,25 @@
+.desc-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  ion-img {
+    padding: 10px 0 10px 10px;
+    width: 40vw;
+    height: 40vw;
+    object-fit: cover;
+  }
+  .txt-box {
+    width: 40vw;
+    overflow: hidden;
+    padding-left: 20px;
+    h3 {
+      padding: 10px 0 10px 0;
+    }
+    p {
+      padding: 0px 10px 0 0;
+    }
+  }
+}
+
+.one {
+  border: 1px solid black;
+}

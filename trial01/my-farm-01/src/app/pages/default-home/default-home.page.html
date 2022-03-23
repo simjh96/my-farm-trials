@@ -28,9 +28,11 @@
               >농장주 구현 필요</ion-label
             ></ion-grid
           >
-          <h2 class="text-size-lg ion-no-margin text-color-primary">
-            {{itemDetailService.getItemDetail(idx).title}}
-          </h2>
+          <ion-grid class="two-line">
+            <h2 class="ion-no-margin text-color-primary">
+              {{itemDetailService.getItemDetail(idx).title | truncate:[20]}}
+            </h2>
+          </ion-grid>
         </ion-card>
       </ion-col>
     </ion-row>
@@ -63,9 +65,11 @@
                 >농장주 구현 필요</ion-label
               ></ion-grid
             >
-            <h2 class="text-size-lg ion-no-margin text-color-primary">
-              {{itemDetailService.getItemDetail(idx).title}}
-            </h2>
+            <ion-grid class="two-line">
+              <h2 class="ion-no-margin text-color-primary">
+                {{itemDetailService.getItemDetail(idx).title| truncate:[20]}}
+              </h2>
+            </ion-grid>
           </ion-card>
         </ion-slide>
       </ion-slides>

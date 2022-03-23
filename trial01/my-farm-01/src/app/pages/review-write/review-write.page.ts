@@ -3,7 +3,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { HttpClient } from '@angular/common/http';
-import { LoadingController, Platform, ToastController } from '@ionic/angular';
+import {
+  LoadingController,
+  NavController,
+  Platform,
+  ToastController,
+} from '@ionic/angular';
 import {
   Camera,
   CameraResultType,
@@ -42,7 +47,8 @@ export class ReviewWritePage implements OnInit {
     private toastCtrl: ToastController,
     private itemDetailService: ItemDetailService,
     private route: ActivatedRoute,
-    private reviewKeywordService: ReviewKeywordService
+    private reviewKeywordService: ReviewKeywordService,
+    private navController: NavController
   ) {
     // set ithItemDetail
     this.itemId = +this.route.snapshot.paramMap.get('itemId');
@@ -55,6 +61,18 @@ export class ReviewWritePage implements OnInit {
 
   async ngOnInit() {
     this.loadFiles();
+  }
+
+  onFollow(params): void {
+    console.log('clicked following: ', params);
+    if (params.btFollowing == '구독하기') {
+      params.btFollowing = '구독중';
+    } else {
+      params.btFollowing = '구독하기';
+    }
+  }
+  openPage(url: string) {
+    this.navController.navigateForward(url, {});
   }
 
   async loadFiles() {

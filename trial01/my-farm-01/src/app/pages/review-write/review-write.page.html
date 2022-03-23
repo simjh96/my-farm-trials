@@ -1,7 +1,7 @@
 <ion-header #header class="green">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/" text=""></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-capitalize">리뷰 작성</ion-title>
   </ion-toolbar>
@@ -18,6 +18,8 @@
   <app-item-detail
     scrollEvents="true"
     [ithItemDetail]="ithItemDetail"
+    (onItemClick)="openPage('neighbor-farm-detail/' + $event.id)"
+    (onFollow)="onFollow($event)"
   ></app-item-detail>
 
   <ion-grid class="my-margin"> </ion-grid>

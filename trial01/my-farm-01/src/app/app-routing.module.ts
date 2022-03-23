@@ -51,7 +51,15 @@ const routes: Routes = [
       import('./pages/neighbor-farm-detail/neighbor-farm-detail.module').then(
         (m) => m.NeighborFarmDetailPageModule
       ),
+  },  {
+    path: 'farm-data',
+    loadChildren: () => import('./pages/farm-data/farm-data.module').then( m => m.FarmDataPageModule)
   },
+  {
+    path: 'growth-diary',
+    loadChildren: () => import('./pages/growth-diary/growth-diary.module').then( m => m.GrowthDiaryPageModule)
+  },
+
 ];
 
 @NgModule({

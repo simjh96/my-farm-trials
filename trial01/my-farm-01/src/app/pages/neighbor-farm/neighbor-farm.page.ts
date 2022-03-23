@@ -9,7 +9,7 @@ import { ItemDetailService } from 'src/app/services/item-detail.service';
 })
 export class NeighborFarmPage implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
-  ithItemDetail: HTMLElement;
+  ithItemDetail;
   idxs: number[];
   fin: boolean;
 

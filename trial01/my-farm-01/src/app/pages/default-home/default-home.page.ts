@@ -9,6 +9,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+
 import { ItemAvatarDetail } from 'src/app/interface/item-avatar-detail';
 import { ItemDetailService } from 'src/app/services/item-detail.service';
 

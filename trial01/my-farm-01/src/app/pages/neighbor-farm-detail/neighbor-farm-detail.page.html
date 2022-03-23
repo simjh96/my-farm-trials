@@ -1,9 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>neighbor-farm-detail</ion-title>
-  </ion-toolbar>
+<ion-header #header>
+  <app-fake-tab
+    [tabInput]="tabInput"
+    (tabChange)="tabChange($event)"
+  ></app-fake-tab>
 </ion-header>
 
-<ion-content>
-
+<!-- Content -->
+<ion-content [fullscreen]="true" class="green">
+  <app-farm-data
+    scrollEvents="true"
+    [appHideHeader]="header"
+    [itemId]="itemId"
+    *ngIf="(currentTab | async) === 'farm-data' || initialTab"
+  ></app-farm-data>
+  <app-growth-diary
+    scrollEvents="true"
+    [appHideHeader]="header"
+    [itemId]="itemId"
+    *ngIf="(currentTab | async) === 'growth-diary'"
+  ></app-growth-diary>
 </ion-content>

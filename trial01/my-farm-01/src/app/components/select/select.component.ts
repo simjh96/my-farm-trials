@@ -42,7 +42,7 @@ export class SelectComponent implements OnChanges {
     };
   }
   ngOnChanges(changes: { [propKey: string]: any }) {
-    console.log('changes: ', changes);
+    // console.log('changes: ', changes);
   }
 
   onChangeFunc(event) {

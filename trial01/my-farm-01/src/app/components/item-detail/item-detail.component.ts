@@ -6,6 +6,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
+import { ItemDetail } from 'src/app/interface/item-detail';
 import { ItemDetailService } from 'src/app/services/item-detail.service';
 
 @Component({
@@ -14,7 +15,7 @@ import { ItemDetailService } from 'src/app/services/item-detail.service';
   styleUrls: ['./item-detail.component.scss'],
 })
 export class ItemDetailComponent implements OnChanges {
-  @Input() ithItemDetail;
+  @Input() ithItemDetail: ItemDetail;
 
   // 해당 scope에 있는 객체의 주소값을 발송하고 parent module에서 조작 한 후 onChange를 통해 자식이 다시 동기화
   @Output() onItemClick = new EventEmitter();
