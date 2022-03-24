@@ -13,3 +13,7 @@
 ## 3. IOS
 
 - 추후 build 예정
+
+## 추후 
+- firebase로 
+- Spring 백엔드로 response body 만 json으로 받아서 정보 관리 계획중...
