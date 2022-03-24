@@ -12,6 +12,7 @@ import { ItemListComponent } from 'src/app/components/item-list/item-list.compon
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { Pipes } from 'src/app/pipes/pipe';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -21,12 +22,13 @@ import { Pipes } from 'src/app/pipes/pipe';
     ReviewSearchPageRoutingModule,
     SharedDirectivesModule,
     Pipes,
+    ComponentsModule,
   ],
   declarations: [
     ReviewSearchPage,
-    SearchBarSimpleComponent,
-    ItemListComponent,
-    FooterComponent,
+    // SearchBarSimpleComponent,
+    // ItemListComponent,
+    // FooterComponent,
   ],
 })
 export class ReviewSearchPageModule {}

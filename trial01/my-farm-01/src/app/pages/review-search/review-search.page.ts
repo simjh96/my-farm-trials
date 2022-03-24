@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReviewSearchPage implements OnInit {
   public cardWide: boolean;
-  constructor() {
+  constructor() {}
+
+  ngOnInit() {
     this.cardWide = true;
   }
-
-  ngOnInit() {}
 }

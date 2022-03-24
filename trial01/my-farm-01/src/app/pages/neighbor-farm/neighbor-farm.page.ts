@@ -16,13 +16,13 @@ export class NeighborFarmPage implements OnInit {
   constructor(
     private itemDetailService: ItemDetailService,
     private navController: NavController
-  ) {
-    this.ithItemDetail = itemDetailService.getItemDetail(2);
+  ) {}
+
+  ngOnInit() {
+    this.ithItemDetail = this.itemDetailService.getItemDetail(2);
     this.idxs = [1, 2, 3, 4];
     this.fin = false;
   }
-
-  ngOnInit() {}
   loadData(event) {
     setTimeout(() => {
       for (let i = 0; i < 4; i++) {

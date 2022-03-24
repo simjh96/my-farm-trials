@@ -10,6 +10,7 @@ import { NeighborFarmPage } from './neighbor-farm.page';
 import { ItemDetailComponent } from 'src/app/components/item-detail/item-detail.component';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { SelectComponent } from 'src/app/components/select/select.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -17,12 +18,13 @@ import { SelectComponent } from 'src/app/components/select/select.component';
     FormsModule,
     IonicModule,
     NeighborFarmPageRoutingModule,
+    ComponentsModule,
   ],
   declarations: [
     NeighborFarmPage,
-    ItemDetailComponent,
-    FooterComponent,
-    SelectComponent,
+    // ItemDetailComponent,
+    // FooterComponent,
+    // SelectComponent,
   ],
 })
 export class NeighborFarmPageModule {}

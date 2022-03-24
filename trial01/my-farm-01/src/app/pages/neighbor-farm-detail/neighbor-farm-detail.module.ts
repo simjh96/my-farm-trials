@@ -14,6 +14,7 @@ import { SharedDirectivesModule } from 'src/app/directives/shared-directives.mod
 import { Pipes } from 'src/app/pipes/pipe';
 import { SwiperModule } from 'swiper/angular';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -24,13 +25,14 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
     SharedDirectivesModule,
     Pipes,
     SwiperModule,
+    ComponentsModule,
   ],
   declarations: [
     NeighborFarmDetailPage,
-    FakeTabComponent,
     FarmDataPage,
     GrowthDiaryPage,
-    FooterComponent,
+    // FakeTabComponent,
+    // FooterComponent,
   ],
 })
 export class NeighborFarmDetailPageModule {}

@@ -9,9 +9,7 @@ import { FakeTabInput } from 'src/app/interface/fake-tab-input';
 export class FakeTabComponent implements OnInit {
   @Output() tabChange = new EventEmitter();
   @Input() tabInput: FakeTabInput;
-  constructor() {
-    console.log(this.tabInput);
-  }
+  constructor() {}
 
   ngOnInit() {}
 

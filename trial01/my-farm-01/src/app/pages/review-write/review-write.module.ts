@@ -11,6 +11,7 @@ import { ItemDetailComponent } from 'src/app/components/item-detail/item-detail.
 import { ChipSlidersComponent } from 'src/app/components/chip-sliders/chip-sliders.component';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 import { FooterComponent } from 'src/app/components/footer/footer.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -19,12 +20,13 @@ import { FooterComponent } from 'src/app/components/footer/footer.component';
     IonicModule,
     ReviewWritePageRoutingModule,
     SharedDirectivesModule,
+    ComponentsModule,
   ],
   declarations: [
     ReviewWritePage,
-    ItemDetailComponent,
-    ChipSlidersComponent,
-    FooterComponent,
+    // ItemDetailComponent,
+    // ChipSlidersComponent,
+    // FooterComponent,
   ],
 })
 export class ReviewWritePageModule {}

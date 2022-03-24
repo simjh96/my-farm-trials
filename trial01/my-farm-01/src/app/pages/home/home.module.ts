@@ -19,6 +19,8 @@ import { FakeTabComponent } from 'src/app/components/fake-tab/fake-tab.component
 import { TruncatePipe } from 'src/app/pipes/truncate.pipe';
 import { Pipes } from 'src/app/pipes/pipe';
 import { environment } from 'src/environments/environment';
+import { DefaultHomePageModule } from '../default-home/default-home.module';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
@@ -33,16 +35,17 @@ import { environment } from 'src/environments/environment';
       apiKey: environment.API_KEY,
       language: (localStorage && localStorage.gml) || 'ko',
     }),
+    ComponentsModule,
   ],
   declarations: [
     HomePage,
     DefaultHomePage,
     NeighborFarmPage,
-    ItemDetailComponent,
-    FooterComponent,
-    SelectComponent,
     MyFarmPage,
-    FakeTabComponent,
+    // ItemDetailComponent,
+    // FooterComponent,
+    // SelectComponent,
+    // FakeTabComponent,
   ],
 })
 export class HomePageModule {}

@@ -14,7 +14,9 @@ export class HomePage implements OnInit {
   public currentTab: Subject<string> = new Subject();
   public tabInput: FakeTabInput;
 
-  constructor() {
+  constructor() {}
+  ngOnInit() {
+    this.currentTab.next('default-home');
     this.tabInput = {
       title: '홈메뉴',
       type: 'menu',
@@ -24,9 +26,6 @@ export class HomePage implements OnInit {
         { url: 'my-farm', icon: 'person', label: '마이농장' },
       ],
     };
-  }
-  ngOnInit() {
-    this.currentTab.next('default-home');
   }
 
   tabChange(newTab: string) {

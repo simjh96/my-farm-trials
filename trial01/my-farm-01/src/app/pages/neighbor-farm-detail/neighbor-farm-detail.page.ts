@@ -17,7 +17,10 @@ export class NeighborFarmDetailPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private itemDetailService: ItemDetailService
-  ) {
+  ) {}
+
+  ngOnInit() {
+    this.currentTab.next('farm-data');
     this.itemId = +this.route.snapshot.paramMap.get('itemId');
     this.tabInput = {
       title: '이웃농장',
@@ -28,8 +31,6 @@ export class NeighborFarmDetailPage implements OnInit {
       ],
     };
   }
-
-  ngOnInit() {}
 
   tabChange(newTab: string) {
     this.currentTab.next(newTab);
