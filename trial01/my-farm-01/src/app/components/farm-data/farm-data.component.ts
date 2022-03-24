@@ -3,7 +3,6 @@ import { FarmerDetail } from 'src/app/interface/farmer-detail';
 import { ItemDetail } from 'src/app/interface/item-detail';
 import { FarmerDetailService } from 'src/app/services/farmer-detail.service';
 import { ItemDetailService } from 'src/app/services/item-detail.service';
-import { SwiperComponent } from 'swiper/angular';
 
 // import Swiper core and required modules
 import SwiperCore, { Pagination } from 'swiper';
@@ -13,10 +12,10 @@ SwiperCore.use([Pagination]);
 
 @Component({
   selector: 'app-farm-data',
-  templateUrl: './farm-data.page.html',
-  styleUrls: ['./farm-data.page.scss'],
+  templateUrl: './farm-data.component.html',
+  styleUrls: ['./farm-data.component.scss'],
 })
-export class FarmDataPage implements OnInit {
+export class FarmDataComponent implements OnInit {
   @Input() itemId: number;
   ithItemDetail: ItemDetail;
   ithFarmerDetail: FarmerDetail;

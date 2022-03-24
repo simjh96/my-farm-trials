@@ -7,19 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
-import { DefaultHomePage } from '../default-home/default-home.page';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
-import { AgmCoreModule } from '@agm/core';
-import { NeighborFarmPage } from '../neighbor-farm/neighbor-farm.page';
-import { ItemDetailComponent } from 'src/app/components/item-detail/item-detail.component';
-import { FooterComponent } from 'src/app/components/footer/footer.component';
-import { SelectComponent } from 'src/app/components/select/select.component';
+
 import { MyFarmPage } from '../my-farm/my-farm.page';
-import { FakeTabComponent } from 'src/app/components/fake-tab/fake-tab.component';
-import { TruncatePipe } from 'src/app/pipes/truncate.pipe';
 import { Pipes } from 'src/app/pipes/pipe';
-import { environment } from 'src/environments/environment';
-import { DefaultHomePageModule } from '../default-home/default-home.module';
+
 import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
@@ -30,17 +22,13 @@ import { ComponentsModule } from 'src/app/components/components.module';
     HomePageRoutingModule,
     SharedDirectivesModule,
     Pipes,
-
-    AgmCoreModule.forRoot({
-      apiKey: environment.API_KEY,
-      language: (localStorage && localStorage.gml) || 'ko',
-    }),
     ComponentsModule,
   ],
   declarations: [
     HomePage,
-    DefaultHomePage,
-    NeighborFarmPage,
+
+    // DefaultHomePage,
+    // NeighborFarmPage,
     MyFarmPage,
     // ItemDetailComponent,
     // FooterComponent,

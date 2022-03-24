@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DefaultHomePage } from '../default-home/default-home.page';
 
 import { HomePage } from './home.page';
 

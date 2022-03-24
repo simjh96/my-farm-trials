@@ -44,7 +44,7 @@
 <ion-item *ngIf="!cardWide">
   <ion-item
     class="default-item border border-radius ion-margin-top"
-    *ngFor="let item of items.items"
+    *ngFor="let item of items['items']"
     (click)="openPage('neighbor-farm-detail/' + item.id)"
   >
     <!-- Avatar-->

@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./review-detail.page.scss'],
 })
 export class ReviewDetailPage implements OnInit {
-  private itemId: string;
+  public itemId: string;
   constructor(private route: ActivatedRoute) {
     this.itemId = this.route.snapshot.paramMap.get('itemId');
   }

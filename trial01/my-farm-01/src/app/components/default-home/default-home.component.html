@@ -14,7 +14,7 @@
         size="6"
         class="ion-no-padding"
         size-lg="4"
-        *ngFor="let idx of [1,2,3,4,5,6]"
+        *ngFor="let idx of [1, 2, 3, 4, 5, 6]"
       >
         <ion-card
           class="grid-card no-box-shadow ion-text-center border color-basic border-radius ion-no-margin"
@@ -30,7 +30,7 @@
           >
           <ion-grid class="two-line">
             <h2 class="ion-no-margin text-color-primary">
-              {{itemDetailService.getItemDetail(idx).title | truncate:[20]}}
+              {{ itemDetailService.getItemDetail(idx).title | truncate: [20] }}
             </h2>
           </ion-grid>
         </ion-card>
@@ -52,7 +52,7 @@
         [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }"
         class="slider-list green"
       >
-        <ion-slide *ngFor="let idx of [1,2,3,4,5,6]">
+        <ion-slide *ngFor="let idx of [1, 2, 3, 4, 5, 6]">
           <ion-card
             class="no-box-shadow ion-text-center border color-basic border-radius ion-no-margin"
           >
@@ -67,7 +67,9 @@
             >
             <ion-grid class="two-line">
               <h2 class="ion-no-margin text-color-primary">
-                {{itemDetailService.getItemDetail(idx).title| truncate:[20]}}
+                {{
+                  itemDetailService.getItemDetail(idx).title | truncate: [20]
+                }}
               </h2>
             </ion-grid>
           </ion-card>
@@ -94,7 +96,7 @@
       </ion-item>
     </ion-item>
 
-    <h3 class="text-size-sm">인근농장: {{cnt}}</h3>
+    <h3 class="text-size-sm">인근농장: {{ cnt }}</h3>
     <agm-map
       [latitude]="latitudes[0]"
       [longitude]="longitudes[0]"

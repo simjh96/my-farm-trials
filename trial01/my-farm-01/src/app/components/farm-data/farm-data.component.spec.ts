@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { FarmDataPage } from './farm-data.page';
+import { FarmDataComponent } from './farm-data.component';
 
-describe('FarmDataPage', () => {
-  let component: FarmDataPage;
-  let fixture: ComponentFixture<FarmDataPage>;
+describe('FarmDataComponent', () => {
+  let component: FarmDataComponent;
+  let fixture: ComponentFixture<FarmDataComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ FarmDataPage ],
+      declarations: [ FarmDataComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(FarmDataPage);
+    fixture = TestBed.createComponent(FarmDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

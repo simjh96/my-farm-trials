@@ -1,30 +1,19 @@
 import { MapsAPILoader, AgmMap } from '@agm/core';
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  HostListener,
-  NgZone,
-  OnInit,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 
-import { ItemAvatarDetail } from 'src/app/interface/item-avatar-detail';
 import { ItemDetailService } from 'src/app/services/item-detail.service';
 
 @Component({
   selector: 'app-default-home',
-  templateUrl: './default-home.page.html',
-  styleUrls: ['./default-home.page.scss'],
+  templateUrl: './default-home.component.html',
+  styleUrls: ['./default-home.component.scss'],
 })
-export class DefaultHomePage implements OnInit {
+export class DefaultHomeComponent implements OnInit {
   title = 'AGM project';
   latitudes: number[];
   longitudes: number[];
   zoom: number;
   cnt: number;
-
   constructor(
     public itemDetailService: ItemDetailService,
     private mapsAPILoader: MapsAPILoader,

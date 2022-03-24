@@ -33,33 +33,14 @@ const routes: Routes = [
         (m) => m.ReviewWritePageModule
       ),
   },
-  {
-    path: 'neighbor-farm',
-    loadChildren: () =>
-      import('./pages/neighbor-farm/neighbor-farm.module').then(
-        (m) => m.NeighborFarmPageModule
-      ),
-  },
-  {
-    path: 'my-farm',
-    loadChildren: () =>
-      import('./pages/my-farm/my-farm.module').then((m) => m.MyFarmPageModule),
-  },
+
   {
     path: 'neighbor-farm-detail/:itemId',
     loadChildren: () =>
       import('./pages/neighbor-farm-detail/neighbor-farm-detail.module').then(
         (m) => m.NeighborFarmDetailPageModule
       ),
-  },  {
-    path: 'farm-data',
-    loadChildren: () => import('./pages/farm-data/farm-data.module').then( m => m.FarmDataPageModule)
   },
-  {
-    path: 'growth-diary',
-    loadChildren: () => import('./pages/growth-diary/growth-diary.module').then( m => m.GrowthDiaryPageModule)
-  },
-
 ];
 
 @NgModule({

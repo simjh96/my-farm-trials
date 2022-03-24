@@ -4,17 +4,17 @@ import { ItemDetailService } from 'src/app/services/item-detail.service';
 
 @Component({
   selector: 'app-neighbor-farm',
-  templateUrl: './neighbor-farm.page.html',
-  styleUrls: ['./neighbor-farm.page.scss'],
+  templateUrl: './neighbor-farm.component.html',
+  styleUrls: ['./neighbor-farm.component.scss'],
 })
-export class NeighborFarmPage implements OnInit {
+export class NeighborFarmComponent implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
   ithItemDetail;
   idxs: number[];
   fin: boolean;
 
   constructor(
-    private itemDetailService: ItemDetailService,
+    public itemDetailService: ItemDetailService,
     private navController: NavController
   ) {}
 

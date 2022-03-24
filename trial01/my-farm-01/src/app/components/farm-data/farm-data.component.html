@@ -6,8 +6,8 @@
         <img [src]="ithItemDetail.avatar" />
       </ion-avatar>
       <ion-col
-        ><ion-grid>{{ithItemDetail.avatarTitle}}</ion-grid
-        ><ion-grid>{{ithItemDetail.title}}</ion-grid>
+        ><ion-grid>{{ ithItemDetail.avatarTitle }}</ion-grid
+        ><ion-grid>{{ ithItemDetail.title }}</ion-grid>
       </ion-col>
     </ion-item>
     <ion-card class="ion-no-margin">
@@ -16,9 +16,9 @@
           <ion-img [src]="ithItemDetail.image"></ion-img>
           <ion-col class="txt-box">
             <h3 class="ion-text-lg">
-              <strong>{{ithItemDetail.cultivar}}</strong>
+              <strong>{{ ithItemDetail.cultivar }}</strong>
             </h3>
-            <p>{{ithItemDetail.description}}</p>
+            <p>{{ ithItemDetail.description }}</p>
           </ion-col>
         </ion-row>
       </ion-card-content>
@@ -30,14 +30,15 @@
       <div
         class="ion-time ion-margin-top slide"
         *ngFor="let item of ithItemDetail.timeLine"
-        (click)="onItemClickFunc(item, $event)"
       >
         <ion-grid class="default-item border border-radius">
           <ion-icon [name]="item['icon']"></ion-icon>
 
           <ion-grid>
-            <p class="text-color-primary">{{item['date']}}</p>
-            <p class="text-color-primary">{{item['content']|truncate:[6]}}</p>
+            <p class="text-color-primary">{{ item["date"] }}</p>
+            <p class="text-color-primary">
+              {{ item["content"] | truncate: [6] }}
+            </p>
           </ion-grid>
         </ion-grid>
       </div>
@@ -49,25 +50,33 @@
       <ion-button (click)="presentAlert()" color="success"
         ><p>수확후</p> </ion-button
       ><ion-icon name="help-circle-outline" (click)="presentAlert()"></ion-icon>
-      <strong><p>{{ithItemDetail.afterHarvest}}</p></strong></ion-grid
+      <strong
+        ><p>{{ ithItemDetail.afterHarvest }}</p></strong
+      ></ion-grid
     >
     <ion-grid class="brix">
       <ion-button (click)="presentAlert()" color="success"
         ><p>당도</p> </ion-button
       ><ion-icon name="help-circle-outline" (click)="presentAlert()"></ion-icon>
-      <strong><p>{{ithItemDetail.brix}}</p></strong></ion-grid
+      <strong
+        ><p>{{ ithItemDetail.brix }}</p></strong
+      ></ion-grid
     >
     <ion-grid class="weight">
       <ion-button (click)="presentAlert()" color="success"
         ><p>(개당)무게</p> </ion-button
       ><ion-icon name="help-circle-outline" (click)="presentAlert()"></ion-icon>
-      <strong><p>{{ithItemDetail.weight}}</p></strong></ion-grid
+      <strong
+        ><p>{{ ithItemDetail.weight }}</p></strong
+      ></ion-grid
     >
     <ion-grid class="certi">
       <ion-button (click)="presentAlert()" color="success"
         ><p>인증</p> </ion-button
       ><ion-icon name="help-circle-outline" (click)="presentAlert()"></ion-icon>
-      <strong><p>{{ithItemDetail.certi}}</p></strong></ion-grid
+      <strong
+        ><p>{{ ithItemDetail.certi }}</p></strong
+      ></ion-grid
     >
   </ion-grid>
   <!-- farmer-desc -->
@@ -77,9 +86,9 @@
         <ion-row class="desc-wrapper">
           <ion-col class="txt-box">
             <h3 class="ion-text-lg">
-              <strong>{{ithFarmerDetail.title}}</strong>
+              <strong>{{ ithFarmerDetail.title }}</strong>
             </h3>
-            <p>{{ithFarmerDetail.description}}</p>
+            <p>{{ ithFarmerDetail.description }}</p>
           </ion-col>
           <ion-img [src]="ithFarmerDetail.image"></ion-img>
         </ion-row>
@@ -88,7 +97,7 @@
   </ion-grid>
   <!-- location -->
   <ion-grid class="location ion-margin-bottom">
-    <h1 class="text-size-md">{{ithFarmerDetail.location}}</h1>
+    <h1 class="text-size-md">{{ ithFarmerDetail.location }}</h1>
 
     <swiper [pagination]="true" class="mySwiper">
       <ng-template swiperSlide
@@ -102,7 +111,9 @@
       ></ng-template>
     </swiper>
 
-    <ion-grid class="text-size-sm"> {{ithFarmerDetail.locationDesc}} </ion-grid>
+    <ion-grid class="text-size-sm">
+      {{ ithFarmerDetail.locationDesc }}
+    </ion-grid>
   </ion-grid>
   <!-- reviews -->
   <ion-grid class="reviews">
