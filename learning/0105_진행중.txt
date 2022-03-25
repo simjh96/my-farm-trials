@@ -1,0 +1,92 @@
+encoder decoder layer 를 share 하는게 제일 좋긴함...
+근데 데이터 많은 가정하에 어차피 비슷해 질듯...
+param 갯수만큼 자유도를 잃긴 할듯
+
+
+일단 accuracy는 0 나오는게 당연함
+mae 말고 다른 matric 써보자
+model weight 어떻게 됐는지 살펴보자
+
+loss를 이상하게 해놨는데 learning이 될 리 없지
+
+dense를 안넣어주면 latent dim에 그대로 있게 됨
+
+batch 건드려 보고
+
+learning rate 건드려 보고
+
+# check model weights
+# parameter search for learning rate
+
+마지막 dense 에서 model weights 가 0 나오는거 보니
+좀 작게 나오는듯?
+
+
+dense 없애고 그냥 lstm hidden dim 을 1로 받아서 해보고 있음
+	아마 숫자가 다 고만고만해서 normalize 하고 나면
+	그 차이가 거의 없어서 loss가 애초에 낮게 나오는걸수도
+	거의 비슷한 조건인데 하나는 되고 하나는 안되는건
+		아마 categorical data 여서 그 편차가 커서 그런걸수도
+		현재 내 데이터는 편차가 거의 없으니
+
+	*일단 dense 없애니까 loss 변동 있긴함(처음 2 epoch만에 바로 저점 가긴함)
+		output_tokens 값도 더이상 1이 아니라 다른 숫자 나옴
+	방법1) difference를 잡고 해본다
+	방법2) loss 기준을 바꾼다
+	방법3) lambda 로 dense 전에 들어가는 값을 부풀려준다
+	방법4) dense 없이 fitting 하고 그 결과를 다시 dense로 fitting 해줌(수동)
+	방법5) vector mse를 줄이려고 하다보니 패턴 있게 도출됨...
+		그냥 seq2seq 말고 일반적인 lstm의 point wise를 연결해서 사용하는것도 나쁘지 않을듯
+			그런 패턴들이 나오니까 dense로 다시 연결 하려 할때 연관성이 없어서 잘 연결 안된걸수도
+
+
+lstm or rnn
+	요일별 추세 같은거 전달 시키기는 lstm이 더 좋을것 같기는해
+
+근데 사실 sample이 많이 없어서
+	노이즈랑 패턴 구분이 쉽지 않음
+
+
+전처리부터해야하나...
+parameter search 부터 해서
+
+제일 작은 learning rate에서 dense 까지 껴서 param search 해볼까...?
+
+history 나 session Refresh 안하고 하면 결과 이상하지 당연히...
+
+learning schedule 에 int 넣으면 난리남 1. 으로 넣어야함
+	init/(1+step) 이 제일 예쁘게 잘 나오는듯
+		근데 모델 저장이 안되는듯
+			inverse time 이 가장 비슷하고 저장 잘 되는데...
+			근데 이상하네.. 왜 같은 결과가 안나오지??
+lambda layer 잘 작동함 (constant로 넣고)
+
+
+
+
+진척:
+	seq2seq 모델 기본틀 확립 완료
+		개요:
+			자연어 처리 모델로 순서 있이 이어지는 정보열 분석 모델
+			결과적으로 28일간 전체 자료에 fitting 하는 다차원 패턴을 찾으려함
+				현재 간단한 모델 설계로 보여지는 특성 확인 가능
+					실제로 의미가 없을 수 있음
+
+	seq2seq vs point estimation
+		weather 편입에 유리
+			실제로 weather 가 가장 큰 관건
+			weather 없으면 noise 와 분리할 info 가 추세에서 밖에 안나옴
+
+해결 과제:
+	model dev & parameter search(d^n)
+		# of latent dim
+			has meaning?(seq2seq)
+				point estimate가 나을지도
+		lambda layer?
+
+	(d*n)
+		# of lstm layer
+		learning rate search
+			inverse time decay imple
+
+	weather 넣으면 weather 까지 추정됨
