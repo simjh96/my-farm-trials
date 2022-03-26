@@ -8,17 +8,14 @@
 <!-- Content -->
 <ion-content [fullscreen]="true" class="green">
   <app-default-home
-    scrollEvents="true"
     [appHideHeader]="header"
     *ngIf="(currentTab | async) === 'default-home' || initialTab"
   ></app-default-home>
   <app-neighbor-farm
-    scrollEvents="true"
     [appHideHeader]="header"
     *ngIf="(currentTab | async) === 'neighbor-farm'"
   ></app-neighbor-farm>
   <app-my-farm
-    scrollEvents="true"
     [appHideHeader]="header"
     *ngIf="(currentTab | async) === 'my-farm'"
   ></app-my-farm>
