@@ -3,12 +3,22 @@ import { Component, NgZone, OnInit } from '@angular/core';
 
 import { ItemDetailService } from 'src/app/services/item-detail.service';
 
+// import Swiper core and required modules
+import SwiperCore, { SwiperOptions } from 'swiper';
+
 @Component({
   selector: 'app-default-home',
   templateUrl: './default-home.component.html',
   styleUrls: ['./default-home.component.scss'],
 })
 export class DefaultHomeComponent implements OnInit {
+  config: SwiperOptions = {
+    slidesPerView: 2.2,
+    spaceBetween: 10,
+    pagination: null,
+    navigation: null,
+  };
+
   title = 'AGM project';
   latitudes: number[];
   longitudes: number[];

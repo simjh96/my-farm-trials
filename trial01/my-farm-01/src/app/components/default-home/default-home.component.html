@@ -48,13 +48,10 @@
         </ion-item>
       </ion-item>
 
-      <ion-slides
-        [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }"
-        class="slider-list green"
-      >
-        <ion-slide *ngFor="let idx of [1, 2, 3, 4, 5, 6]">
+      <swiper class="mySwiper" [config]="config">
+        <ng-template swiperSlide *ngFor="let idx of [1, 2, 3, 4, 5, 6]">
           <ion-card
-            class="no-box-shadow ion-text-center border color-basic border-radius ion-no-margin"
+            class="no-box-shadow ion-text-center border color-basic border-radius ion-no-margin slide"
           >
             <img [src]="itemDetailService.getItemDetail(idx).image" />
             <ion-grid lines="none" class="farmer-info">
@@ -73,8 +70,8 @@
               </h2>
             </ion-grid>
           </ion-card>
-        </ion-slide>
-      </ion-slides>
+        </ng-template>
+      </swiper>
 
       <ion-col
         size="6"

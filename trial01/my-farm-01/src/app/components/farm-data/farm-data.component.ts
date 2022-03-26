@@ -4,9 +4,9 @@ import { ItemDetail } from 'src/app/interface/item-detail';
 import { FarmerDetailService } from 'src/app/services/farmer-detail.service';
 import { ItemDetailService } from 'src/app/services/item-detail.service';
 
+import { AlertController, NavController } from '@ionic/angular';
 // import Swiper core and required modules
 import SwiperCore, { Pagination } from 'swiper';
-import { AlertController, NavController } from '@ionic/angular';
 // install Swiper modules
 SwiperCore.use([Pagination]);
 

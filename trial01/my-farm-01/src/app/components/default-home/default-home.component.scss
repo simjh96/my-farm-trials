@@ -43,12 +43,12 @@
   }
   margin-top: 15px;
 
-  ion-slides {
-    margin-top: 0px;
+  swiper {
+    margin-top: 10px;
     padding-bottom: 20px;
-    ion-slide {
+    .slide {
       width: 170px;
-      height: 220px;
+      height: 250px;
       margin: 20px 5px 0 10px;
       box-shadow: 5px 10px 10px #17b2397c;
       border-radius: 5px;

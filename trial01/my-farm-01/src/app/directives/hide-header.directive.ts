@@ -19,6 +19,9 @@ export class HideHeaderDirective implements OnInit {
     // console.log(this);
     this.domCtrl.read(() => {
       this.headerHeight = this.header.clientHeight;
+      if (this.headerHeight == 0) {
+        location.reload();
+      }
     });
   }
 
@@ -28,9 +31,9 @@ export class HideHeaderDirective implements OnInit {
     let newPosition = -(scrollTop / 5);
 
     if (newPosition < -this.headerHeight) {
-      newPosition = -this.header;
+      newPosition = -this.headerHeight;
     }
-    const newOpacity = 1 - newPosition / this.headerHeight;
+    const newOpacity = 1 - newPosition / -this.headerHeight;
     this.domCtrl.write(() => {
       this.renderer.setStyle(this.header, 'top', `${newPosition}px`);
       this.renderer.setStyle(this.header, 'opacity', newOpacity);
