@@ -1,12 +1,13 @@
-<ion-header #header>
-  <app-fake-tab
-    [tabInput]="tabInput"
-    (tabChange)="tabChange($event)"
-  ></app-fake-tab>
-</ion-header>
-
 <!-- Content -->
 <ion-content [fullscreen]="true" class="green">
+  <!-- Header; inserted inside ion-content as mobile browser bug -->
+  <ion-header #header>
+    <app-fake-tab
+      [tabInput]="tabInput"
+      (tabChange)="tabChange($event)"
+    ></app-fake-tab>
+  </ion-header>
+
   <app-farm-data
     scrollEvents="true"
     [appHideHeader]="header"

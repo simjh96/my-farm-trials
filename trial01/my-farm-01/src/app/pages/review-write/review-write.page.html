@@ -1,18 +1,19 @@
-<ion-header #header class="green">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/" text=""></ion-back-button>
-    </ion-buttons>
-    <ion-title class="ion-text-capitalize">리뷰 작성</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content
   [fullscreen]="true"
   scrollEvents="true"
   [appHideHeader]="header"
   class="green"
 >
+  <!-- Header; inserted inside ion-content as mobile browser bug -->
+  <ion-header #header class="green">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/" text=""></ion-back-button>
+      </ion-buttons>
+      <ion-title class="ion-text-capitalize">리뷰 작성</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
   <ion-grid class="my-margin"> </ion-grid>
   <!-- item-detail -->
   <app-item-detail
