@@ -43,15 +43,6 @@ export class AppComponent {
         component: '[]',
         singlePage: true,
       },
-      {
-        url: 'review-detail/1',
-        title: '리뷰 상세 구상중...',
-        theme: 'item-detail',
-        icon: 'chevron-forward-circle',
-        listView: true,
-        component: '[]',
-        singlePage: false,
-      },
     ];
   }
   openPage(url: string) {

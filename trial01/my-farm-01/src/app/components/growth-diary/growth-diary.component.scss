@@ -1,0 +1,17 @@
+// location
+.location {
+  background-color: #fff;
+  position: relative;
+  .img-wrapper {
+    ion-img {
+      height: 60vw;
+      object-fit: cover;
+    }
+  }
+  .swiper-pagination {
+    position: absolute;
+    bottom: 0;
+    left: 45%;
+    z-index: 999;
+  }
+}

@@ -20,6 +20,7 @@ import { Pipes } from '../pipes/pipe';
 import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
 import { SwiperModule } from 'swiper/angular';
+import { MyFarmComponent } from './my-farm/my-farm.component';
 
 @NgModule({
   imports: [
@@ -46,6 +47,7 @@ import { SwiperModule } from 'swiper/angular';
     NeighborFarmComponent,
     FarmDataComponent,
     GrowthDiaryComponent,
+    MyFarmComponent,
   ],
   exports: [
     ChipSlidersComponent,
@@ -59,6 +61,7 @@ import { SwiperModule } from 'swiper/angular';
     NeighborFarmComponent,
     FarmDataComponent,
     GrowthDiaryComponent,
+    MyFarmComponent,
   ],
 })
 export class ComponentsModule {}

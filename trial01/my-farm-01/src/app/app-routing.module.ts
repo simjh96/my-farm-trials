@@ -20,13 +20,6 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'review-detail/:itemId',
-    loadChildren: () =>
-      import('./pages/review-detail/review-detail.module').then(
-        (m) => m.ReviewDetailPageModule
-      ),
-  },
-  {
     path: 'review-write/:itemId',
     loadChildren: () =>
       import('./pages/review-write/review-write.module').then(

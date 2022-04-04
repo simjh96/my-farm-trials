@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll, NavController } from '@ionic/angular';
+import { ItemDetail } from 'src/app/interface/item-detail';
 import { ItemDetailService } from 'src/app/services/item-detail.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ItemDetailService } from 'src/app/services/item-detail.service';
 })
 export class NeighborFarmComponent implements OnInit {
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
-  ithItemDetail;
+  ithItemDetail: ItemDetail;
   idxs: number[];
   fin: boolean;
 

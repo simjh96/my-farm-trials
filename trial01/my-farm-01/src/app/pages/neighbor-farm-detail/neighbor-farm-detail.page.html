@@ -9,13 +9,11 @@
   </ion-header>
 
   <app-farm-data
-    scrollEvents="true"
     [appHideHeader]="header"
     [itemId]="itemId"
     *ngIf="(currentTab | async) === 'farm-data' || initialTab"
   ></app-farm-data>
   <app-growth-diary
-    scrollEvents="true"
     [appHideHeader]="header"
     [itemId]="itemId"
     *ngIf="(currentTab | async) === 'growth-diary'"

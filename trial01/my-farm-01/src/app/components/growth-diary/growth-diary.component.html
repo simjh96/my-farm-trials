@@ -1,3 +1,30 @@
-<ion-content scrollEvents="true">
-  <p>growth diary works!</p>
-</ion-content>
+<!-- location -->
+<ion-grid class="location ion-margin-bottom">
+  <h1 class="text-size-md">{{ ithFarmerDetail.location }}</h1>
+
+  <ion-grid class="content-wrapper" *ngFor="let idx of idxs">
+    <swiper [pagination]="true" class="mySwiper">
+      <ng-template swiperSlide
+        ><ion-grid class="img-wrapper">
+          <ion-img
+            [src]="ithFarmerDetail.farmImg"
+          ></ion-img> </ion-grid></ng-template
+      ><ng-template swiperSlide
+        ><ion-grid class="img-wrapper">
+          <ion-img [src]="ithFarmerDetail.farmImg"></ion-img> </ion-grid
+      ></ng-template>
+    </swiper>
+    <ion-grid class="text-size-sm">
+      {{ ithFarmerDetail.locationDesc }}
+    </ion-grid>
+  </ion-grid>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="더 옛날 사진~"
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <app-footer *ngIf="fin"></app-footer>
+</ion-grid>

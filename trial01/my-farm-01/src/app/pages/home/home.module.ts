@@ -9,7 +9,6 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 
-import { MyFarmPage } from '../my-farm/my-farm.page';
 import { Pipes } from 'src/app/pipes/pipe';
 
 import { ComponentsModule } from 'src/app/components/components.module';
@@ -24,16 +23,6 @@ import { ComponentsModule } from 'src/app/components/components.module';
     Pipes,
     ComponentsModule,
   ],
-  declarations: [
-    HomePage,
-
-    // DefaultHomePage,
-    // NeighborFarmPage,
-    MyFarmPage,
-    // ItemDetailComponent,
-    // FooterComponent,
-    // SelectComponent,
-    // FakeTabComponent,
-  ],
+  declarations: [HomePage],
 })
 export class HomePageModule {}
