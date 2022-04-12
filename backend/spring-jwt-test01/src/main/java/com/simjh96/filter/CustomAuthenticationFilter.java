@@ -29,6 +29,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.simjh96.model.CustomUser;
+import com.simjh96.mybatis.MemberMapper;
 import com.simjh96.security.CustomUserDetailsService;
 import com.simjh96.util.JwtUtil;
 
@@ -39,7 +40,7 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 	private JwtUtil jwtTokenUtil;
 	
 	@Autowired
-	CustomUserDetailsService userDetailsService;
+	private MemberMapper memberMapper;
 	
 	@Autowired
 	@Override
@@ -52,12 +53,15 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
 			throws AuthenticationException {
-		String id = request.getParameter("username"); // default login이 username이네 ...
+		System.out.println("customAuthentication start");
+		String id = request.getParameter("username") != null?request.getParameter("username"):request.getParameter("nickname"); // default login이 username이네 ...
 		String password = request.getParameter("password");
 		System.out.println("attempt Authentication");
 		System.out.println("id :" + id);
 		System.out.println("password :" + password);
 		UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(id, password);
+		System.out.println(authenticationToken);
+		System.out.println(this.getAuthenticationManager());
 		return this.getAuthenticationManager().authenticate(authenticationToken);
 	}
 
@@ -66,9 +70,8 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 			Authentication authResult) throws IOException, ServletException {
 		CustomUser customUser = (CustomUser) authResult.getPrincipal();
 
-		final UserDetails userDetails = userDetailsService.loadUserByUsername(authResult.getName());
-		final String access_token = jwtTokenUtil.generateToken(userDetails,request.getRequestURL().toString(), true);
-		final String refresh_token = jwtTokenUtil.generateToken(userDetails,request.getRequestURL().toString(), false);
+		final String access_token = jwtTokenUtil.generateToken(memberMapper.read(authResult.getName()),request.getRequestURL().toString(), true);
+		final String refresh_token = jwtTokenUtil.generateToken(memberMapper.read(authResult.getName()),request.getRequestURL().toString(), false);
 		
 		Map<String, String> tokens = new HashMap<>();
 		tokens.put("access_token", access_token);

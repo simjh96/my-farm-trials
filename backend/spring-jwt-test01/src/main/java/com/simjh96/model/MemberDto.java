@@ -7,12 +7,15 @@ import lombok.Data;
 
 @Data
 public class MemberDto {
-	private String id;
+	private String nickname;
 	private String password;
-	private String name;
-	private String phone;
+	private String kakaopk;
+	private String kakaothumb;
+	private String kakaoname;
+	private String email;
 	private int zipcode;
 	private String address;
+	private String phone;
 	private Date regdate;
-	private List<AuthDto> authList;
+	private List<String> authList;
 }

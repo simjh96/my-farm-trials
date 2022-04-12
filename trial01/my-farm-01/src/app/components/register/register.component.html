@@ -1,0 +1,40 @@
+<ion-content fullscreen="true">
+  <ion-grid class="wrapper">
+    <ion-grid>
+      <ion-text class="ion-text-center ion-margin-top">
+        <h1 class="text-size-md">마이농장에서 불릴 별명을 알려주세요!</h1>
+      </ion-text>
+    </ion-grid>
+
+    <ion-grid class="login-wrapper">
+      <ion-img src="../../../assets/icon/farmer.svg"> </ion-img>
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+        <ion-grid class="input-box ion-margin-top">
+          <label for="nickname">닉네임</label
+          ><input
+            #i
+            name="nickname"
+            placeholder="사용할 닉네임을 입력해주세요"
+            (focusout)="checkId(i)"
+            ngModel
+          />
+        </ion-grid>
+        <ion-grid class="input-box ion-margin-top">
+          <label for="password">비밀번호</label
+          ><input
+            type="password"
+            name="password"
+            placeholder="사용할 비밀번호를 입력해주세요"
+            ngModel
+          />
+        </ion-grid>
+        <button
+          class="custom-button ion-margin-top ion-margin-bottom text-size-md"
+        >
+          회원등록!
+        </button>
+      </form>
+    </ion-grid>
+  </ion-grid>
+  <app-footer></app-footer>
+</ion-content>

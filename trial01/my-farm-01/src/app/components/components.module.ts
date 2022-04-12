@@ -21,6 +21,8 @@ import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
 import { SwiperModule } from 'swiper/angular';
 import { MyFarmComponent } from './my-farm/my-farm.component';
+import { RegisterComponent } from './register/register.component';
+import { MyFarmInComponent } from './my-farm-in/my-farm-in.component';
 
 @NgModule({
   imports: [
@@ -48,6 +50,8 @@ import { MyFarmComponent } from './my-farm/my-farm.component';
     FarmDataComponent,
     GrowthDiaryComponent,
     MyFarmComponent,
+    RegisterComponent,
+    MyFarmInComponent,
   ],
   exports: [
     ChipSlidersComponent,
@@ -62,6 +66,8 @@ import { MyFarmComponent } from './my-farm/my-farm.component';
     FarmDataComponent,
     GrowthDiaryComponent,
     MyFarmComponent,
+    RegisterComponent,
+    MyFarmInComponent,
   ],
 })
 export class ComponentsModule {}

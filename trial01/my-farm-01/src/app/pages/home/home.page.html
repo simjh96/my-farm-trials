@@ -7,6 +7,7 @@
       (tabChange)="tabChange($event)"
     ></app-fake-tab>
   </ion-header>
+
   <app-default-home
     [appHideHeader]="header"
     *ngIf="(currentTab | async) === 'default-home' || initialTab"
@@ -17,6 +18,11 @@
   ></app-neighbor-farm>
   <app-my-farm
     [appHideHeader]="header"
-    *ngIf="(currentTab | async) === 'my-farm'"
+    *ngIf="((currentTab | async) === 'my-farm' && ((this.auth.userData | async) === undefined || (this.auth.userData | async) === null)) && (this.auth.kakaoAuth | async) === null"
   ></app-my-farm>
+  <app-my-farm-in
+    *ngIf="(currentTab | async) === 'my-farm' && (this.auth.userData | async)"
+    (click)="this.auth.logout()"
+  ></app-my-farm-in>
+  <app-register *ngIf="(this.auth.kakaoAuth | async) !== null"> </app-register>
 </ion-content>

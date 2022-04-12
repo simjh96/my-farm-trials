@@ -1,8 +1,48 @@
-<ion-content scrollEvents="true" fullscreen="true">
-  <ion-grid
-    ><ion-col>
-      <ion-row> <ion-icon size="large" name="alert"></ion-icon> </ion-row
-      ><ion-row>페이지 준비중입니다...</ion-row>
-    </ion-col></ion-grid
-  >
+<ion-content fullscreen="true">
+  <ion-grid class="wrapper">
+    <ion-grid>
+      <ion-text class="ion-text-center ion-margin-top">
+        <h1 class="text-size-md">로그인하고 나만의 농장을 만들어 보세요!</h1>
+      </ion-text>
+    </ion-grid>
+
+    <ion-grid class="login-wrapper ion-margin-top">
+      <ion-img src="../../../assets/icon/farmer.svg"> </ion-img>
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+        <ion-grid class="input-box ion-margin-top">
+          <label for="nickname">닉네임</label
+          ><input name="nickname" placeholder="닉네임을 입력해주세요" ngModel />
+        </ion-grid>
+        <ion-grid class="input-box ion-margin-top">
+          <label for="password">비밀번호</label
+          ><input
+            type="password"
+            name="password"
+            placeholder="가입시 비밀번호를 입력해주세요"
+            ngModel
+          />
+        </ion-grid>
+        <button
+          class="custom-button ion-margin-top ion-margin-bottom text-size-md"
+        >
+          마이 계정으로 로그인
+        </button>
+      </form>
+    </ion-grid>
+
+    <ion-grid class="join-wrapper ion-margin-top">
+      <ion-text class="ion-text-center">
+        <h1 class="text-size-md">
+          카카오톡 로그인으로 빠르게 회원가입 해보세요!
+        </h1>
+      </ion-text>
+      <img
+        src="../../../assets/icon/kakao_login_medium_wide.png"
+        alt="카카오 로그인 버튼"
+        class="ion-margin-top ion-margin-bottom"
+        (click)="kakaoLogin()"
+      />
+    </ion-grid>
+  </ion-grid>
+  <app-footer></app-footer>
 </ion-content>

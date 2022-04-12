@@ -11,6 +11,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import com.simjh96.model.MemberDto;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,15 +43,16 @@ public class JwtUtil {
 	private Boolean isTokenExpired(String token) {
 		return extractExpiration(token).before(new Date());
 	}
-	public String generateToken(UserDetails userDetails, String issuer, Boolean accessToken) {
+	public String generateToken(MemberDto memberDto, String issuer, Boolean accessToken) {
 		Map<String,Object> claims = new HashMap<>();
 		
 		if (accessToken) {
 			// db의 roles 랑 충돌 가능,,,
-			claims.put("roles", userDetails.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()));
-			return createAccessToken(claims, userDetails.getUsername(), issuer);	
+			claims.put("roles", memberDto.getAuthList());
+			claims.put("kakaothumb", memberDto.getKakaothumb());
+			return createAccessToken(claims, memberDto.getNickname(), issuer);	
 		} else {
-			return createRefreshToken(claims, userDetails.getUsername(), issuer);
+			return createRefreshToken(claims, memberDto.getNickname(), issuer);
 		}
 	}
 

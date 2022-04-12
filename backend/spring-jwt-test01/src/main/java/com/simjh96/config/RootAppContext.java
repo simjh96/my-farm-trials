@@ -28,7 +28,7 @@ public class RootAppContext {
 		HikariConfig hikariConfig = new HikariConfig();
 		hikariConfig.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 		hikariConfig.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:xe");
-		hikariConfig.setUsername("TIS002");
+		hikariConfig.setUsername("MYNG");
 		hikariConfig.setPassword("1234");
 	 
 		System.out.println("히카리 데이터 소스");

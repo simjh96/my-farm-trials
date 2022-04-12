@@ -2,25 +2,63 @@
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.simjh96.mybatis.MemberMapper">
 	<resultMap type="com.simjh96.model.MemberDto" id="memberMap">
-		<id property="id" column="id" />
-		<result property="id" column="id" />
+		<id property="nickname" column="nickname" />
+		<result property="nickname" column="nickname" />
 		<result property="password" column="password" />
-		<result property="name" column="name" />
-		<result property="phone" column="phone" />
+		<result property="kakaopk" column="kakaopk" />
+		<result property="kakaothumb" column="kakaothumb" />
+		<result property="kakaoname" column="kakaoname" />
+		<result property="email" column="email" />
 		<result property="zipcode" column="zipcode" />
 		<result property="address" column="address" />
+		<result property="phone" column="phone" />
 		<result property="regdate" column="regdate" />
-		<collection property="authList" resultMap="authMap"></collection>
+		<collection property="authList" ofType="java.lang.String"
+			javaType="list">
+			<result column="auth" />
+		</collection>
 	</resultMap>
-	<resultMap type="com.simjh96.model.AuthDto" id="authMap">
-		<result property="id" column="id" />
-		<result property="auth" column="auth" />
-	</resultMap>
+
 
 	<select id="read" resultMap="memberMap">
-		SELECT mem.id, password, enabled, name, phone, zipcode, address, regdate,
-		auth FROM COUPANGUSER mem LEFT OUTER JOIN COUPANGUSER_AUTH auth on
-		mem.id = auth.id WHERE mem.id = #{id}
+		SELECT mem.nickname, password,
+		enabled, mem.kakaopk, kakaothumb, kakaoname, email, zipcode, address,
+		phone,
+		regdate,
+		auth.auth FROM MYNGUSER mem LEFT OUTER JOIN MYNGUSER_AUTH
+		auth on
+		mem.kakaopk = auth.kakaopk WHERE mem.nickname = #{nickname}
 	</select>
+	<select id="getNickname" parameterType="String" resultType="String">
+		SELECT nickname FROM MYNGUSER WHERE kakaopk = #{kakaopk}
+	</select>
+	<update id="updateByPk" parameterType="com.simjh96.model.MemberDto">
+		update MYNGUSER SET nickname=#{nickname}, password=#{password} WHERE kakaopk =
+		#{kakaopk}
+	</update>
 
+	<insert id="insertMember"
+		parameterType="com.simjh96.model.MemberDto">
+		INSERT INTO MYNGUSER (NO, ENABLED,
+		KAKAOPK, KAKAOTHUMB, KAKAONAME)
+		VALUES (SEQ_MYNGUSER.NEXTVAL,
+		'1',
+		#{kakaopk},
+		#{kakaothumb},
+		#{kakaoname}
+		)
+	</insert>
+	<insert id="insertAuth"
+		parameterType="com.simjh96.model.AuthDto">
+		INSERT INTO MYNGUSER_AUTH
+		VALUES
+		(SEQ_MYNGUSER_AUTH.NEXTVAL,
+		#{kakaopk},
+		#{auth}
+		)
+	</insert>
+	<select id="idCheck" parameterType="String" resultType="Integer">
+		SELECT
+		COUNT(*) FROM MYNGUSER WHERE NICKNAME = #{nickname}
+	</select>
 </mapper>

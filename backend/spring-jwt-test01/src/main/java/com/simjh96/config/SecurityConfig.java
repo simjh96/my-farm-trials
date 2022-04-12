@@ -16,11 +16,13 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.access.channel.ChannelProcessingFilter;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
+import com.simjh96.filter.CorsFilter;
 import com.simjh96.filter.CustomAuthenticationFilter;
 import com.simjh96.filter.JwtRequestFilter;
 import com.simjh96.security.CustomLoginSuccessHandler;
@@ -62,18 +64,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	private CustomAuthenticationFilter customAuthenticationFilter;
-	
+
+	@Autowired
+	private CorsFilter corsFilter;
 	
 	// STATELESS가 핵심
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable();
 		http.authorizeRequests()
+		.antMatchers("/").permitAll()
+		.antMatchers("/JoinEnd.do").permitAll()
+		.antMatchers("/JoinStart.do").permitAll()
+		.antMatchers("/IdCheck.do").permitAll()
+		.antMatchers("/CustomLogin.do").permitAll()
 		.antMatchers("/authentication").permitAll()
+		.antMatchers("/kakao-redirect-test").permitAll()
+		.antMatchers("/login").permitAll()
 		.antMatchers("/others").hasAnyAuthority("ROLE_MEMBER")
 		.anyRequest().authenticated()
 		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.addFilter(customAuthenticationFilter);
+		http.addFilterBefore(corsFilter, ChannelProcessingFilter.class);
 		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 		http.formLogin().successHandler(loginSuccessHandler());
 	}

@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { PageDetail } from './interface/page-detail';
+import { AuthService } from './services/auth.service';
+declare let Kakao: any;
 
+Kakao.init('f513d5ff87bae79fd73c9abd045cb000');
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,7 +17,7 @@ export class AppComponent {
     title: '',
     description: '',
   };
-  constructor(private navController: NavController) {
+  constructor(private navController: NavController, private auth: AuthService) {
     this.appPages = [
       {
         url: 'review-search',
