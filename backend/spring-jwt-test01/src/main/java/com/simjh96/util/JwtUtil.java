@@ -50,6 +50,7 @@ public class JwtUtil {
 			// db의 roles 랑 충돌 가능,,,
 			claims.put("roles", memberDto.getAuthList());
 			claims.put("kakaothumb", memberDto.getKakaothumb());
+			claims.put("kakaoname", memberDto.getKakaoname());
 			return createAccessToken(claims, memberDto.getNickname(), issuer);	
 		} else {
 			return createRefreshToken(claims, memberDto.getNickname(), issuer);

@@ -15,7 +15,7 @@ export class HomePage implements OnInit {
   public currentTab: Subject<string> = new Subject();
   public tabInput: FakeTabInput;
 
-  constructor(private auth: AuthService) {}
+  constructor(public auth: AuthService) {}
   ngOnInit() {
     this.auth.user.subscribe();
     this.currentTab.next('default-home');

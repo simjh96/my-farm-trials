@@ -8,12 +8,15 @@
     </ion-grid>
 
     <ion-grid class="login-wrapper ion-margin-top">
-      <ion-img src="../../../assets/icon/farmer.svg"> </ion-img>
+      <img [src]="this.auth.userInfo.kakaothumb" />
+      <ion-text class="ion-margin-top">
+        <h2 class="ion-no-margin">
+          {{ this.auth.userInfo.kakaoname }}
+        </h2>
+      </ion-text>
       <ion-grid class="input-box ion-margin-top">
-        <ion-text>닉네임: {{ this.auth.userData | async }}</ion-text>
-        <ion-grid class="input-box ion-margin-top">
-          <ion-text>비밀번호</ion-text>
-        </ion-grid>
+        <ion-text>닉네임: {{ this.auth.userInfo.sub }}</ion-text>
+        <ion-grid class="input-box ion-margin-top"> </ion-grid>
       </ion-grid>
     </ion-grid>
     <app-footer></app-footer>

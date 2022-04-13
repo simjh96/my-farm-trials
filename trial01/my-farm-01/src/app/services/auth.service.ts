@@ -19,7 +19,12 @@ export class AuthService {
   public kakaoAuth = new BehaviorSubject(null);
   public user: Observable<any>;
   public kakaopk: string;
-  private userData = new BehaviorSubject(null);
+  public userInfo = {
+    kakaoname: '받은내용 없음',
+    kakaothumb: '받은내용 없음',
+    sub: '받은내용 없음',
+  };
+  public userData = new BehaviorSubject(null);
 
   constructor(
     private storage: Storage,
@@ -42,6 +47,7 @@ export class AuthService {
         console.log('Token from storage: ', token);
         if (token) {
           let decoded = helper.decodeToken(token);
+          this.userInfo = decoded;
           console.log('decoded: ', decoded);
           this.userData.next(decoded);
           return true;
@@ -80,6 +86,7 @@ export class AuthService {
         let decoded0 = helper.decodeToken(token['access_token'] as any);
         let decoded1 = helper.decodeToken(token['refresh_token'] as any);
         console.log('decoded0: ', decoded0);
+        this.userInfo = decoded0;
         this.userData.next(decoded0);
         let storageObs1 = this.storage.set(ACCESS_TOKEN, token['access_token']);
         let storageObs2 = this.storage.set(

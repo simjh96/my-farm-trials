@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RegisterComponent implements OnInit {
   private idChecked = false;
   constructor(
-    private auth: AuthService,
+    public auth: AuthService,
     private alertCtrl: AlertController,
     private router: Router
   ) {}

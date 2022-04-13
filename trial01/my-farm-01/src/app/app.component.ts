@@ -2,9 +2,13 @@ import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { PageDetail } from './interface/page-detail';
 import { AuthService } from './services/auth.service';
+import { environment } from 'src/environments/environment';
 declare let Kakao: any;
 
-Kakao.init('f513d5ff87bae79fd73c9abd045cb000');
+if (environment['KAKAO_JS_KEY']) {
+  Kakao.init(environment['KAKAO_JS_KEY']);
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',

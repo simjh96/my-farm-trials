@@ -61,6 +61,8 @@ export class MyFarmComponent implements OnInit {
           success: (res) => {
             console.log(res);
             this.auth.kakaopk = res.id;
+            this.auth.userInfo.kakaothumb = res.properties.thumbnail_image;
+            this.auth.userInfo.kakaoname = res.properties.nickname;
             this.kakaoLogout();
           },
           fail: (error) => {

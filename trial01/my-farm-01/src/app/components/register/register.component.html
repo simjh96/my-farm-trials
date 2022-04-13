@@ -1,13 +1,18 @@
 <ion-content fullscreen="true">
   <ion-grid class="wrapper">
     <ion-grid>
+      <ion-text class="ion-margin-top">
+        <h2 class="ion-no-margin">
+          {{ this.auth.userInfo.kakaoname }}
+        </h2>
+      </ion-text>
       <ion-text class="ion-text-center ion-margin-top">
         <h1 class="text-size-md">마이농장에서 불릴 별명을 알려주세요!</h1>
       </ion-text>
     </ion-grid>
 
     <ion-grid class="login-wrapper">
-      <ion-img src="../../../assets/icon/farmer.svg"> </ion-img>
+      <img [src]="this.auth.userInfo.kakaothumb" />
       <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
         <ion-grid class="input-box ion-margin-top">
           <label for="nickname">닉네임</label
