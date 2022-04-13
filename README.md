@@ -8,12 +8,28 @@
 
 ## 2. Android
 
-![alt text](Nexus_5_API_30_5554.gif)
+![alt android_preview](Nexus_5_API_30_5554.gif)
 
 ## 3. IOS
 
 - 추후 build 예정
 
+## 4. Angular
+
+- Rxjs로 로그인 및 state 동기화
+
+![alt front_login](front_login.gif)
+
+## 5. Back
+
+- jwt로 stateless backend
+- spring mvc + mybatis
+- 카카오 로그인 api로 회원가입 완료
+- 회원 table + auth table 완료
+
+![alt back_login](back_login.gif)
+
+
 ## 추후 
-- firebase로 
-- Spring 백엔드로 response body 만 json으로 받아서 정보 관리 계획중...
+- firebase로 online?
+- 데이터 구조 및 통계량 종류 고민중...
