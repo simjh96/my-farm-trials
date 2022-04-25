@@ -33,7 +33,19 @@ const routes: Routes = [
       import('./pages/neighbor-farm-detail/neighbor-farm-detail.module').then(
         (m) => m.NeighborFarmDetailPageModule
       ),
+  },  {
+    path: 'qr-cam',
+    loadChildren: () => import('./pages/qr-cam/qr-cam.module').then( m => m.QrCamPageModule)
   },
+  {
+    path: 'no-more',
+    loadChildren: () => import('./pages/no-more/no-more.module').then( m => m.NoMorePageModule)
+  },
+  {
+    path: 'farm-of-month',
+    loadChildren: () => import('./pages/farm-of-month/farm-of-month.module').then( m => m.FarmOfMonthPageModule)
+  },
+
 ];
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { MapsAPILoader, AgmMap } from '@agm/core';
 import { Component, NgZone, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 import { ItemDetailService } from 'src/app/services/item-detail.service';
 
@@ -27,7 +28,8 @@ export class DefaultHomeComponent implements OnInit {
   constructor(
     public itemDetailService: ItemDetailService,
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private navController: NavController
   ) {
     //set latitude, longitude and zoom
     this.cnt = 3;
@@ -41,5 +43,8 @@ export class DefaultHomeComponent implements OnInit {
   ngOnInit() {
     //load Places Autocomplete
     this.mapsAPILoader.load().then(() => {});
+  }
+    openPage(url: string) {
+    this.navController.navigateForward(url, {});
   }
 }

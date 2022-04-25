@@ -1,9 +1,3 @@
-<ion-content
-  [fullscreen]="true"
-  scrollEvents="true"
-  [appHideHeader]="header"
-  class="green"
->
   <!-- Header; inserted inside ion-content as mobile browser bug -->
   <ion-header #header class="green">
     <ion-toolbar>
@@ -13,8 +7,8 @@
       <ion-title class="ion-text-capitalize">리뷰 관리</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-search-bar-simple></app-search-bar-simple>
-  <app-item-list [cardWide]="cardWide"></app-item-list>
-  <app-footer></app-footer>
-</ion-content>
+  <ion-content [fullscreen]="true" scrollEvents="true" [appHideHeader]="header" class="green">
+    <app-search-bar-simple></app-search-bar-simple>
+    <app-item-list [cardWide]="cardWide"></app-item-list>
+    <app-footer></app-footer>
+  </ion-content>

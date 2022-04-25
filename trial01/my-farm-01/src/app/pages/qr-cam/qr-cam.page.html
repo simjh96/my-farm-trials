@@ -1,0 +1,45 @@
+<!-- https://devdactic.com/pwa-qr-scanner-ionic/ -->
+
+<ion-content>
+  <!-- Header; inserted inside ion-content as mobile browser bug -->
+  <ion-header #header class="green">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/" text=""></ion-back-button>
+      </ion-buttons>
+      <ion-title class="ion-text-capitalize">QR 스캐너</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-button expand="full" (click)="reset()" color="warning" *ngIf="scanResult && !isIos">
+    <ion-icon slot="start" name="refresh"></ion-icon>
+    다시 스캔
+  </ion-button>
+
+
+
+  <!-- Shows our camera stream -->
+  <video #video [hidden]="!scanActive" width="100%"></video>
+
+  <!-- Used to render the camera stream images -->
+  <canvas #canvas hidden></canvas>
+
+  <ion-card *ngIf="scanResult">
+    <ion-card-header>
+      <ion-card-title>QR Code</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ scanResult }}
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>현재 플랫폼: {{this.plt.platforms()}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text color="danger">IPhone 에서는 Chrome으로 카메라에 접근 할 수 없습니다! 사파리나 앱을 이용해주세요</ion-text>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
