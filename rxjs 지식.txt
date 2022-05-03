@@ -1,0 +1,25 @@
+Service
+
+EDITED: Corrected a couple of typing errors.
+
+fwcUser: BehaviorSubject<FwcUser> = new BehaviorSubject<FwcUser>(null);
+fwcUser$ = this.fwcUser.asObservable();
+
+// Set the value of the fwcUser
+updateFwcUser(user) {
+    this.fwcUser.next(user);
+}
+Component
+직전 값 받는 두가지 방법
+ 1.
+// Subscribe to the BehaviorSubject
+ngOnInit() {
+    this.fwcUserService.fwcUser$.subscribe(_fwcUser => {
+        this.fwcUser = _fwcUser
+    }
+}
+2.
+// Get the current (previously emitted) value manually
+getFwcUser() {
+    this.fwcUser = this.fwcUserService.fwcUser.getValue();
+}
