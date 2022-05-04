@@ -1,0 +1,21 @@
+ion-content {
+  position: relative;
+}
+#featureBackground {
+  height: 70vh;
+  width: 120vw;
+  position: absolute;
+  bottom: 0;
+  left: -10vw;
+  overflow: hidden;
+}
+
+
+.ball {
+  position: absolute;
+  background-color: #91e600;
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  will-change: transform;
+}
