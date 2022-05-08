@@ -1,0 +1,20 @@
+.order-detail {
+  ion-grid:nth-child(0) {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ion-grid {
+    ion-img {
+      height: 150px;
+      object-fit: cover;
+    }
+  }
+  .following {
+    --background: #81c963;
+  }
+  .to-follow {
+    --background: #11912d;
+  }
+}

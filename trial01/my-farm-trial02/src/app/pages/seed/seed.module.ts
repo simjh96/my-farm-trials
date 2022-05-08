@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { SeedPageRoutingModule } from './seed-routing.module';
 
 import { SeedPage } from './seed.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SeedPageRoutingModule
+    SeedPageRoutingModule,
+    ComponentsModule,
   ],
   declarations: [SeedPage]
 })

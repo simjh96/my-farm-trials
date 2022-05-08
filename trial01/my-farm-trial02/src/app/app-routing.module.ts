@@ -16,8 +16,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/seed/seed.module').then( m => m.SeedPageModule)
   },
   {
-    path: 'seed',
-    loadChildren: () => import('./pages/seed/seed.module').then( m => m.SeedPageModule)
+    path: 'farm-of-month',
+    loadChildren: () => import('./pages/farm-of-month/farm-of-month.module').then( m => m.FarmOfMonthPageModule)
+  },
+  {
+    path: 'farm-detail',
+    loadChildren: () => import('./pages/farm-detail/farm-detail.module').then( m => m.FarmDetailPageModule)
+  },
+  {
+    path: 'magazine-inprogress',
+    loadChildren: () => import('./pages/magazine-inprogress/magazine-inprogress.module').then( m => m.MagazineInprogressPageModule)
   },
 ];
 
