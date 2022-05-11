@@ -3,7 +3,7 @@
 #### 해당 repository의 모든 mock image들은 저에게 저작권이 있지 않습니다.
 
 ## 1. PWA
-- 휴대폰 사이즈로 봐야함(responsive 미구현)
+- 휴대폰 사이즈로 봐야함
 [https://simjh96.github.io/my-farm-trials/home](https://simjh96.github.io/my-farm-trials/home)
 
 ## 2. Android
