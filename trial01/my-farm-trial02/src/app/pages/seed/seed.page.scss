@@ -14,8 +14,7 @@ ion-content {
 .ball {
   position: absolute;
   background-color: #91e600;
-  width: 30vh;
-  height: 30vh;
   border-radius: 50%;
   will-change: transform;
+  text-align: center;
 }
