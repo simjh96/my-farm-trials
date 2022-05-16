@@ -19,11 +19,14 @@ import gsap from 'gsap';
 export class SeedPage implements AfterViewInit, OnInit {
   public balls = [];
   public _balls = [];
+  public ballCount = 20;
+  public ballRm = 15;
+  public delta = 0.1;
+
   public newBall;
   public _newBall;
   public featureBackground;
   public content;
-  public i: number;
   public vw;
   public vh;
 
@@ -36,54 +39,52 @@ export class SeedPage implements AfterViewInit, OnInit {
     this.vh = this.platform.height();
   }
   ngOnInit(): void {
-    this.featureBackground = this.renderer.createElement('ion-grid');
-    this.content = this.el.nativeElement.children[1];
-    this.renderer.setProperty(
-      this.featureBackground,
-      'id',
-      'featureBackground'
-    );
-    this.renderer.appendChild(this.content, this.featureBackground);
+    this.setFeatureBackground();
+    let imgUrls = this.mkImgUrls(this.ballCount);
 
-    for (this.i = 0; this.i < 20; this.i++) {
+    // generage balls and _balls
+    for (let i = 0; i < this.ballCount; i++) {
       // meta data of balls
-      const r = this.vw * 0.15 * this.random(0.7, 1);
-      this._newBall = { x: r, y: 0, r };
+      const r = this.vw * 0.01 * this.ballRm * this.random(0.7, 1);
+      this._newBall = {
+        x: r,
+        y: 0,
+        r,
+        imgUrl: this.getRandomFromBucket(imgUrls),
+      };
       this._balls.push(this._newBall);
 
       // render balls
-      this.newBall = this.renderer.createElement('ion-grid');
-      this.renderer.addClass(this.newBall, 'ball');
-      this.renderer.setStyle(this.newBall, 'width', `${2 * r}px`);
-      this.renderer.setStyle(this.newBall, 'height', `${2 * r}px`);
-      this.renderer.appendChild(
-        this.newBall,
-        this.renderer.createText(`${this.i}`)
-      );
+      this.newBall = this.genNewBall(r, i);
+      // this.renderer.appendChild(this.newBall, this.renderer.createText(`${i}`));
       this.renderer.appendChild(this.featureBackground, this.newBall);
       this.balls.push(this.newBall);
     }
-
-    this.calcInitPos();
   }
 
   ngAfterViewInit(): void {
+    // set initital landing position
+    console.log(`calc begin`);
+    this.calcInitPos();
+    console.log(`calc fin`);
+
+    // render with gsap
     this.balls.forEach((e, i) => {
       gsap.set(e, {
-        backgroundColor:
-          'random([#663399,#84d100,#cc9900,#0066cc,#993333,#d8637c])',
         x: this._balls[i]['x'],
         y: '-50vw',
         xPercent: -50,
         yPercent: -50,
+        rotate: -50,
+        scale: 0.3,
       });
-    });
-    this.balls.forEach((e, i) => {
       gsap.to(e, {
         xPercent: -50,
         yPercent: -50,
-        delay: 0.5 + 0.05 * i,
+        delay: 1.5 + 0.05 * i,
         y: this._balls[i]['y'],
+        scale: 1,
+        rotate: 0,
       });
     });
   }
@@ -93,13 +94,20 @@ export class SeedPage implements AfterViewInit, OnInit {
   }
 
   calcInitPos() {
-    console.log(`==================calcInitPos works==================`);
     for (let i = 0; i < this._balls.length; i++) {
       const element = this._balls[i];
       this.setPos(i);
     }
   }
 
+  /**
+   *
+   * @param upto current targeted circle idx
+   *
+   * set final position of circle
+   * directly manipulate instance variable's meta data
+   * _balls[upto]['x'], _balls[upto]['y']
+   */
   setPos(upto: number) {
     // set pos upto i
     if (upto === 0) {
@@ -115,19 +123,14 @@ export class SeedPage implements AfterViewInit, OnInit {
         Math.sqrt(
           d ** 2 - (this._balls[initTouch]['x'] - this._balls[upto]['x']) ** 2
         );
-      console.log(`piled to :`, this._balls[upto]['y']);
 
       if (this._balls[upto]['x'] < this._balls[initTouch]['x']) {
         // not rollable
-        console.log(`not rollable`);
       } else {
-        console.log(`rollable`);
         let theta = this.getTheta(upto, initTouch);
-        console.log(`current theta`, theta);
         // roll
         let banList = [initTouch];
         let roll = this.rollTilTouch(upto, initTouch, theta, banList);
-        console.log(`banlist`, banList);
         let safeCount = 0;
         while (roll['ctn'] === true && safeCount < 10) {
           roll = this.rollTilTouch(
@@ -138,13 +141,15 @@ export class SeedPage implements AfterViewInit, OnInit {
           );
           safeCount += 1;
         }
-        console.log(
-          `ball ${upto} has finnished at ${this._balls[upto]['x']}, ${this._balls[upto]['y']}`
-        );
       }
     }
   }
 
+  /**
+   *
+   * @param upto current target to set initial position
+   * @returns initail position of first contact at fall
+   */
   getInitTouch(upto) {
     let candidates = [];
     for (let i = 0; i < upto; i++) {
@@ -155,15 +160,25 @@ export class SeedPage implements AfterViewInit, OnInit {
         ) + this._balls[i]['y'];
       candidates.push({ i, y: isNaN(y) ? this.vh : y });
     }
-    candidates.forEach((v, i) => {
-      console.log(`point ${upto} <-${candidates[i]['y']}-> ${i}`);
-    });
     return candidates.reduce(
       (past: { i: number; y: number }, curr: { i: number; y: number }) =>
         curr['y'] <= past['y'] ? curr : past,
       { i: -1, y: this.vh }
     )['i'];
   }
+
+  /**
+   *
+   * @param upto orbiting circle
+   * @param initTouch sun circle
+   * @param theta sun, orbit degree in radian
+   * @param banList visited suns
+   * @returns ctn until all possible travel to right is finnished
+   *
+   * orbit until next contact
+   * try finding another circle to touch until hitting wall
+   * look only around orbit to lessen complexity
+   */
   rollTilTouch(
     upto,
     initTouch,
@@ -173,48 +188,63 @@ export class SeedPage implements AfterViewInit, OnInit {
     let d = this.getD(upto, initTouch);
     let touched = false;
     let safeCount = 0;
+    let farList = [];
 
+    // loop until touch a wall or other pre placed circle
     while (
       this._balls[upto]['x'] + this._balls[upto]['r'] < this.vw * 1.5 &&
       this._balls[upto]['y'] + this._balls[upto]['r'] < this.vh * 0.7 &&
       !touched &&
       safeCount < 100
     ) {
-      theta -= 0.1;
+      // update with delta movement of theta (clockwise)
+      theta -= this.delta;
       this._balls[upto]['x'] =
         this._balls[initTouch]['x'] + d * Math.cos(theta);
       this._balls[upto]['y'] =
         this._balls[initTouch]['y'] - d * Math.sin(theta);
-      console.log(
-        `==== tilted ====`,
-        this._balls[upto]['x'],
-        this._balls[upto]['y']
-      );
-      console.log(`current theta : `, theta);
+
       for (let i = 0; i < upto; i++) {
-        if (
-          !banList.includes(i) &&
-          Math.hypot(
+        // only look through coverage
+        if (!farList.includes(i)) {
+          let distance = Math.hypot(
             this._balls[upto]['x'] - this._balls[i]['x'],
             this._balls[upto]['y'] - this._balls[i]['y']
-          ) <=
-            this._balls[upto]['r'] + this._balls[i]['r']
-        ) {
-          console.log(`${upto} detacted collision with ${i} `);
-          touched = true;
-          banList.push(i);
-          return {
-            tIdx: i,
-            ctn: this._balls[upto]['x'] >= this._balls[i]['x'],
-            theta,
-          };
+          );
+          // memo far ones
+          if (
+            distance >
+            2 * (this._balls[upto]['r'] + this._balls[initTouch]['r']) + this._balls[i]['r']
+          ) {
+            farList.push(i);
+          }
+          // check touch
+          if (
+            !banList.includes(i) &&
+            distance <= this._balls[upto]['r'] + this._balls[i]['r']
+          ) {
+            touched = true;
+            banList.push(i);
+            return {
+              tIdx: i,
+              ctn: this._balls[upto]['x'] >= this._balls[i]['x'],
+              theta,
+            };
+          }
         }
       }
       safeCount += 1;
     }
-    console.log(`ended with touching wall`);
     return { tIdx: 0, ctn: false, theta };
   }
+  /**
+   *
+   * @param i i
+   * @param j j
+   * @returns arg tan of two ball_i, ball_j
+   *
+   * not commutative as y always have heading -
+   */
   getTheta(i, j) {
     // get theta
     return Math.atan(
@@ -222,7 +252,77 @@ export class SeedPage implements AfterViewInit, OnInit {
         (this._balls[i]['x'] - this._balls[j]['x'])
     );
   }
+  /**
+   *
+   * @param i i
+   * @param j j
+   * @returns r_i + r_j
+   *
+   * commutative
+   */
   getD(i, j) {
     return this._balls[i]['r'] + this._balls[j]['r'];
+  }
+
+  /**
+   *
+   * sets background in ionic default el
+   */
+  setFeatureBackground() {
+    this.featureBackground = this.renderer.createElement('ion-grid');
+    this.content = this.el.nativeElement.children[1];
+    this.renderer.setProperty(
+      this.featureBackground,
+      'id',
+      'featureBackground'
+    );
+    this.renderer.appendChild(this.content, this.featureBackground);
+  }
+
+  /**
+   *
+   * @param r radius
+   * @param i to link with _balls[i]
+   * @returns newBall
+   *
+   * sets newBall to have class, width, height, background-image
+   */
+  genNewBall(r, i) {
+    let newBall = this.renderer.createElement('ion-grid');
+    this.renderer.addClass(newBall, 'ball');
+    this.renderer.setStyle(newBall, 'width', `${2 * r}px`);
+    this.renderer.setStyle(newBall, 'height', `${2 * r}px`);
+    this.renderer.setStyle(
+      newBall,
+      'background-image',
+      this._balls[i]['imgUrl']
+    );
+    return newBall;
+  }
+
+  /**
+   *
+   * @param bucket any array
+   * @returns idx without replacement
+   *
+   * pop a random idx
+   */
+  getRandomFromBucket(bucket) {
+    let randomIndex = Math.floor(Math.random() * bucket.length);
+    return bucket.splice(randomIndex, 1)[0];
+  }
+  /**
+   *
+   * @param mx max idx (if asset is plenty)
+   * @returns imgUrls bucket
+   *
+   * generate imgUrl bucket from fruit1.jpg ~ fruitmx.jpg
+   */
+  mkImgUrls(mx) {
+    let imgUrls = [];
+    for (let i = 1; i <= mx; i++) {
+      imgUrls.push(`url(/assets/images/contents/fruits/fruit${i}.jpg)`);
+    }
+    return imgUrls;
   }
 }
