@@ -8,6 +8,7 @@ import { SeedPageRoutingModule } from './seed-routing.module';
 
 import { SeedPage } from './seed.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { SharedDirectivesModule } from 'src/app/directives/shared-directives.module';
 
 @NgModule({
   imports: [

@@ -1,5 +1,12 @@
+
+
 ion-content {
   position: relative;
+  .non-coverable {
+    position: absolute;
+    z-index: 9;
+    background-color: #fff;
+  }
 }
 #featureBackground {
   height: 70vh;
@@ -13,7 +20,7 @@ ion-content {
 
 .ball {
   position: absolute;
-  background-size: cover;
+  object-fit: cover;
   border-radius: 50%;
   will-change: transform;
   text-align: center;

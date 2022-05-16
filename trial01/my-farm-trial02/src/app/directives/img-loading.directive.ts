@@ -18,6 +18,7 @@ import {
   selector: 'img'
 })
 export class ImgLoadingDirective {
+  // constructor 딴에서 작동하기 때문에 onInit 이후 사용되는 render2 에는 사용 불가
   constructor(private el: ElementRef,
     private imageService: ImgLoadingService,
     public loadingController: LoadingController) {

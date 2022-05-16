@@ -33,12 +33,13 @@ export class SeedPage implements AfterViewInit, OnInit {
   constructor(
     private renderer: Renderer2,
     private el: ElementRef,
-    private platform: Platform
+    private platform: Platform,
   ) {
     this.vw = this.platform.width();
     this.vh = this.platform.height();
   }
   ngOnInit(): void {
+    // set canvas
     this.setFeatureBackground();
     let imgUrls = this.mkImgUrls(this.ballCount);
 
@@ -56,7 +57,6 @@ export class SeedPage implements AfterViewInit, OnInit {
 
       // render balls
       this.newBall = this.genNewBall(r, i);
-      // this.renderer.appendChild(this.newBall, this.renderer.createText(`${i}`));
       this.renderer.appendChild(this.featureBackground, this.newBall);
       this.balls.push(this.newBall);
     }
@@ -214,7 +214,8 @@ export class SeedPage implements AfterViewInit, OnInit {
           // memo far ones
           if (
             distance >
-            2 * (this._balls[upto]['r'] + this._balls[initTouch]['r']) + this._balls[i]['r']
+            2 * (this._balls[upto]['r'] + this._balls[initTouch]['r']) +
+              this._balls[i]['r']
           ) {
             farList.push(i);
           }
@@ -285,18 +286,15 @@ export class SeedPage implements AfterViewInit, OnInit {
    * @param i to link with _balls[i]
    * @returns newBall
    *
-   * sets newBall to have class, width, height, background-image
+   * sets img newBall to have class, width, height, src
    */
   genNewBall(r, i) {
-    let newBall = this.renderer.createElement('ion-grid');
+    let newBall = this.renderer.createElement('img');
+    this.renderer.setAttribute(newBall, 'src', this._balls[i]['imgUrl']);
+    this.renderer.setAttribute(newBall, 'alt', 'fruit circle');
     this.renderer.addClass(newBall, 'ball');
     this.renderer.setStyle(newBall, 'width', `${2 * r}px`);
     this.renderer.setStyle(newBall, 'height', `${2 * r}px`);
-    this.renderer.setStyle(
-      newBall,
-      'background-image',
-      this._balls[i]['imgUrl']
-    );
     return newBall;
   }
 
@@ -321,7 +319,7 @@ export class SeedPage implements AfterViewInit, OnInit {
   mkImgUrls(mx) {
     let imgUrls = [];
     for (let i = 1; i <= mx; i++) {
-      imgUrls.push(`url(/assets/images/contents/fruits/fruit${i}.jpg)`);
+      imgUrls.push(`/assets/images/contents/fruits/fruit${i}.jpg`);
     }
     return imgUrls;
   }
