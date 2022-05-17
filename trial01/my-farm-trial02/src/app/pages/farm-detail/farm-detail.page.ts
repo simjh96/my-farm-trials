@@ -20,7 +20,7 @@ export class FarmDetailPage implements OnInit {
     // set ithItemDetail
     this.farmerId = 1;
     this.ithFarmerDetail = farmerDetailService.getFarmerDetail(this.farmerId);
-    console.log(this.ithFarmerDetail.farmImg);
+    console.log(this.ithFarmerDetail);
   }
 
   ngOnInit() {}

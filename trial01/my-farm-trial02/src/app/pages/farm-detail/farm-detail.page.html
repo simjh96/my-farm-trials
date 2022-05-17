@@ -19,11 +19,10 @@
   </ion-grid>
 
   <!-- farmer-desc-box -->
-  <ion-grid class="farmer-desc-box">
+  <ion-grid class="farmer-desc-box mx-2 my-2">
     <ion-grid class="farmer-upper-box">
       <ion-grid class="farmer-img-wrapper">
-        <ion-grid class="farmer-img-box" [ngStyle]="{'background-image': 'url('+this.ithFarmerDetail.farmImg+')'}">
-      </ion-grid>
+        <img class="farmer-img" [src]="this.ithFarmerDetail.image">
       </ion-grid>
       <ion-grid class="farmer-txt-box">
         <ion-grid class="farm-txt-wrapper">
@@ -31,8 +30,8 @@
           <p>{{this.ithFarmerDetail.avatarSubTitle }}</p>
         </ion-grid>
         <ion-grid class="icon-wrapper">
-          <ion-icon name="bookmark"></ion-icon>
-          <ion-icon name="bookmark"></ion-icon>
+          <ion-icon name="person-add-outline" class="mr"></ion-icon>
+          <ion-icon name="document-text-outline" class="mr"></ion-icon>
         </ion-grid>
       </ion-grid>
     </ion-grid>
@@ -53,9 +52,9 @@
   </ion-grid>
 
   <!-- farm-desc -->
-  <ion-grid class="farm-desc">
-    <p>{{this.ithFarmerDetail.title}}을 소개합니다</p>
-    <p>{{this.ithFarmerDetail.avatarSubTitle }}</p>
+  <ion-grid class="farm-desc mx-3">
+    <p class="h4 mb-3">{{this.ithFarmerDetail.title}}을 소개합니다</p>
+    <p>{{this.ithFarmerDetail.locationDesc }}</p>
   </ion-grid>
 
 
@@ -73,8 +72,7 @@
 
           </ion-grid>
           <ion-grid class="img-wrapper">
-            <ion-grid class="img-box" [ngStyle]="{'background-image': 'url('+this.ithFarmerDetail.farmImg+')'}">
-          </ion-grid>
+            <img class="img-box" [src]="this.ithFarmerDetail.image">
           </ion-grid>
         </ion-grid>
       </ng-template>
@@ -83,8 +81,7 @@
       <ng-template ngbPanelContent>
         <ion-grid class="accordion-wrapper">
           <ion-grid class="img-wrapper">
-            <ion-grid class="img-box" [ngStyle]="{'background-image': 'url('+this.ithFarmerDetail.farmImg+')'}">
-          </ion-grid>
+            <img class="img-box" [src]="this.ithFarmerDetail.image">
           </ion-grid>
           <ion-grid class="accordion-txt-box">
             <ion-grid class="accordion-txt-wrapper">
@@ -112,8 +109,7 @@
 
           </ion-grid>
           <ion-grid class="img-wrapper">
-            <ion-grid class="img-box" [ngStyle]="{'background-image': 'url('+this.ithFarmerDetail.farmImg+')'}">
-          </ion-grid>
+            <img class="img-box" [src]="this.ithFarmerDetail.image">
           </ion-grid>
         </ion-grid>
       </ng-template>
