@@ -9,6 +9,7 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { Pipes } from '../pipes/pipe';
 import { SharedDirectivesModule } from '../directives/shared-directives.module';
 import { FakeTabComponent } from './fake-tab/fake-tab.component';
+import { SeedFallComponent } from './seed-fall/seed-fall.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,13 @@ import { FakeTabComponent } from './fake-tab/fake-tab.component';
     SearchBarSimpleComponent,
     ItemDetailComponent,
     FakeTabComponent,
+    SeedFallComponent,
   ],
-  exports: [SearchBarSimpleComponent, ItemDetailComponent, FakeTabComponent],
+  exports: [
+    SearchBarSimpleComponent,
+    ItemDetailComponent,
+    FakeTabComponent,
+    SeedFallComponent,
+  ],
 })
 export class ComponentsModule {}

@@ -1,15 +1,7 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/" text=""></ion-back-button>
-    </ion-buttons>
-    <ion-title>마이씨앗</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
+<!-- 100%로 height을 놓으면 tab만큼 밀리는 문제 발생중 -->
+<ion-content [fullscreen]="true">
   <ion-grid class="non-coverable">
-    <ion-list-header>유정님,</ion-list-header>
+    <ion-list-header>-- 개발중 --</ion-list-header>
     <ion-list-header>오늘은 어떤 씨앗을 심어볼까요? </ion-list-header>
     <app-search-bar-simple></app-search-bar-simple>
     <ion-chip outline color="primary">
@@ -19,10 +11,10 @@
       <ion-label>새로 들어온</ion-label>
     </ion-chip>
     <ion-chip outline color="warning">
-      <ion-label>새로 들어온</ion-label>
+      <ion-label>테스트 중</ion-label>
     </ion-chip>
     <ion-chip outline color="danger">
-      <ion-label>새로 들어온</ion-label>
+      <ion-label>테스트 중</ion-label>
     </ion-chip>
   </ion-grid>
   <app-seed-fall></app-seed-fall>

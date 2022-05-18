@@ -24,6 +24,7 @@ export class HomePage implements OnInit {
       type: 'menu',
       tabs: [
         { url: 'default-home', icon: 'home', label: '홈' },
+        { url: 'my-seed', icon: 'egg', label: '마이씨앗' },
         { url: 'neighbor-farm', icon: 'leaf', label: '이웃농장' },
         { url: 'my-farm', icon: 'person', label: '마이농장' },
       ],

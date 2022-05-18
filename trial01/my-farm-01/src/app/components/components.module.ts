@@ -23,6 +23,8 @@ import { SwiperModule } from 'swiper/angular';
 import { MyFarmComponent } from './my-farm/my-farm.component';
 import { RegisterComponent } from './register/register.component';
 import { MyFarmInComponent } from './my-farm-in/my-farm-in.component';
+import { SeedFallComponent } from './seed-fall/seed-fall.component';
+import { MySeedComponent } from './my-seed/my-seed.component';
 
 @NgModule({
   imports: [
@@ -52,6 +54,8 @@ import { MyFarmInComponent } from './my-farm-in/my-farm-in.component';
     MyFarmComponent,
     RegisterComponent,
     MyFarmInComponent,
+    MySeedComponent,
+    SeedFallComponent,
   ],
   exports: [
     ChipSlidersComponent,
@@ -68,6 +72,8 @@ import { MyFarmInComponent } from './my-farm-in/my-farm-in.component';
     MyFarmComponent,
     RegisterComponent,
     MyFarmInComponent,
+    MySeedComponent,
+    SeedFallComponent,
   ],
 })
 export class ComponentsModule {}

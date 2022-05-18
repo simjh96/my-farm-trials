@@ -16,6 +16,11 @@
     [appHideHeader]="header"
     *ngIf="(currentTab | async) === 'neighbor-farm'"
   ></app-neighbor-farm>
+  <app-my-seed
+    [appHideHeader]="header"
+    *ngIf="(currentTab | async) === 'my-seed'"
+  ></app-my-seed>
+
   <app-my-farm
     [appHideHeader]="header"
     *ngIf="((currentTab | async) === 'my-farm' && ((this.auth.userData | async) === undefined || (this.auth.userData | async) === null)) && (this.auth.kakaoAuth | async) === null"
