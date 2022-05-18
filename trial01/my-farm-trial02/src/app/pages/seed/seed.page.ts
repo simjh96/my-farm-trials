@@ -19,7 +19,7 @@ import gsap from 'gsap';
 export class SeedPage implements AfterViewInit, OnInit {
   public balls = [];
   public _balls = [];
-  public ballCount = 20;
+public ballCount = 22;
   public ballRm = 15;
   public delta = 0.1;
 

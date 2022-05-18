@@ -16,7 +16,7 @@
       <p class="desc-txt">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, reprehenderit, eveniet modi soluta, ullam quas beatae maiores iusto reiciendis odit fugiat architecto cum. Facilis necessitatibus veniam a deserunt optio ipsa.</p>
       <p class="entry-status">지금까지 17명이 참여했어요</p>
       <ion-grid class="img-tiles">
-        <img class="img-box" [src]="this.ithMagazineDetail.image" *ngFor="let idx of [1, 2, 3, 4, 5, 6, 7, 8, 9]" (click)="openPage(idx)">
+        <img class="img-box" *ngFor="let idx of [1, 2, 3, 4, 5, 6, 7, 8, 9]" [src]="this.allMagazineDetails[idx].image" (click)="openPage(idx)">
       </ion-grid>
       <ion-button class="more">더보기</ion-button>
       <ion-button class="join">나도 참여하기</ion-button>

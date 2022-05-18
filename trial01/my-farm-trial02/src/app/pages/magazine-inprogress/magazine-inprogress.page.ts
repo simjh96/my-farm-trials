@@ -9,15 +9,12 @@ import { MagazineDetailService } from 'src/app/services/magazine-detail.service'
 })
 export class MagazineInprogressPage implements OnInit {
   public magazineId: number;
-  public ithMagazineDetail;
+  public allMagazineDetails;
 
   constructor(private magazineDetailService: MagazineDetailService, private navController: NavController) {
-    // set ithItemDetail
-    this.magazineId = 1;
-    this.ithMagazineDetail = magazineDetailService.getMagazineDetail(
-      this.magazineId
-    );
-    console.log(this.ithMagazineDetail);
+    // set all magazineDetails
+    this.allMagazineDetails = magazineDetailService.getAllMagazineDetail();
+    console.log(this.allMagazineDetails);
   }
 
   ngOnInit() {}

@@ -3,9 +3,11 @@
 ion-content {
   position: relative;
   .non-coverable {
+    width: 100vw;
     position: absolute;
     z-index: 9;
     background-color: #fff;
+
   }
 }
 #featureBackground {

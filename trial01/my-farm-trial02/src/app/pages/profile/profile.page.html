@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="profile-info"></ion-grid>
+  <ion-grid class="tab-contents">
+    <app-fake-tab
+      [tabInput]="tabInput"
+      (tabChange)="tabChange($event)"
+    ></app-fake-tab>
+
+    <app-writes
+      *ngIf="(currentTab | async) === 'writes' || initialTab"
+    ></app-writes>
+    <app-seeds *ngIf="(currentTab | async) === 'seeds'"></app-seeds>
+    <app-exps *ngIf="(currentTab | async) === 'exps'"></app-exps>
+    <app-scraps *ngIf="(currentTab | async) === 'scraps'"></app-scraps>
+  </ion-grid>
+</ion-content>

@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
-
 import { SearchBarSimpleComponent } from './search-bar-simple/search-bar-simple.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 
 import { Pipes } from '../pipes/pipe';
 import { SharedDirectivesModule } from '../directives/shared-directives.module';
-
+import { FakeTabComponent } from './fake-tab/fake-tab.component';
 
 @NgModule({
   imports: [
@@ -22,10 +21,8 @@ import { SharedDirectivesModule } from '../directives/shared-directives.module';
   declarations: [
     SearchBarSimpleComponent,
     ItemDetailComponent,
+    FakeTabComponent,
   ],
-  exports: [
-    SearchBarSimpleComponent,
-    ItemDetailComponent,
-  ],
+  exports: [SearchBarSimpleComponent, ItemDetailComponent, FakeTabComponent],
 })
 export class ComponentsModule {}

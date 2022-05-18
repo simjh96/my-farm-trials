@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'magazine-inprogress',
     loadChildren: () => import('./pages/magazine-inprogress/magazine-inprogress.module').then( m => m.MagazineInprogressPageModule)
+  },  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule)
   },
+
 ];
 
 @NgModule({
