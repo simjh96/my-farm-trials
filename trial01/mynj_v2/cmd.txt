@@ -28,10 +28,12 @@ https://www.npmjs.com/package/ngx-three
 ghpage
 	$ npm i angular-cli-ghpages --save
 		install 할때만
-	$ ionic build --prod -- --base-href https://simjh96.github.io/mynj/
+	$ ionic build --prod -- --base-href https://simjh96.github.io/my-farm-trials/mynj/
 	$ npx angular-cli-ghpages --dir=www
 
-pinch zoom
+		my-farm-01 까지 해놓고 뒤로 url 걸면 다른 폴더 my-farm-trials/my-farm-01 도 사용 가능
+
+pinch zoom(https://www.npmjs.com/package/ngx-pinch-zoom)
 	npm i ngx-pinch-zoom
 		Cannot find name 'VisibilityState'. Did you mean 'XRVisibilityState'?
 		이거 바꿔주니까 그냥 됨
